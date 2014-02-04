@@ -1,0 +1,161 @@
+\begin{thebibliography}{10}
+
+\bibitem{mapreduce}
+J.~Dean and S.~Ghemawat, ``Mapreduce: Simplified data processing on large
+  clusters,'' {\em Commun. ACM}, vol.~51, pp.~107--113, jan 2008.
+
+\bibitem{deanon1}
+X.~Ding, L.~Zhang, Z.~Wan, and M.~Gu, ``A brief survey on de-anonymization
+  attacks in online social networks,'' in {\em Computational Aspects of Social
+  Networks (CASoN), 2010 International Conference on}, pp.~611--615, 2010.
+
+\bibitem{deanon2}
+A.~Narayanan and V.~Shmatikov, ``Robust de-anonymization of large sparse
+  datasets,'' in {\em Security and Privacy, 2008. SP 2008. IEEE Symposium on},
+  pp.~111--125, 2008.
+
+\bibitem{deident}
+G.~D. H.~E. Gymrek~M, McGuire~AL and E.~Y, ``Identifying personal genomes by
+  surname inference,'' {\em Science}, no.~339, pp.~321--324, 2013.
+
+\bibitem{presidential}
+``Privacy and progress in whole genome sequencing,'' report to the president,
+  Presidential Commission for the Study of Bioethical Issues, Washington,
+  October 2012.
+
+\bibitem{carraher}
+f.~a. l.~carraher, ``A parallel algorithm for query adaptive, locality
+  sensitive hash search,'' 2012.
+
+\bibitem{Ladner}
+R.~E. Ladner and M.~J. Fischer, ``Parallel prefix computation,'' {\em J. ACM},
+  vol.~27, pp.~831--838, oct 1980.
+
+\bibitem{dasgupta08}
+S.~Dasgupta, {\em The hardness of k-means clustering}.
+\newblock Department of Computer Science and Engineering, University of
+  California, San Diego, 2008.
+
+\bibitem{Mahajan09}
+M.~Mahajan, P.~Nimbhorkar, and K.~Varadarajan, ``The planar k-means problem is
+  np-hard,'' in {\em WALCOM: Algorithms and Computation} (S.~Das and R.~Uehara,
+  eds.), vol.~5431, ch.~Lecture Notes in Computer Science, pp.~274--285,
+  Springer Berlin Heidelberg, 2009.
+
+\bibitem{Achlioptas01}
+D.~Achlioptas, ``Database-friendly random projections,'' in {\em Proceedings of
+  the twentieth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database
+  systems}, pp.~274--281, 2001.
+
+\bibitem{Vempala}
+S.~S. Vempala, {\em The Random Projection Method}.
+\newblock DIMACS Series, American Mathematical Society, 2004.
+
+\bibitem{bingham}
+E.~Bingham and H.~Mannila, ``Random projection in dimensionality reduction:
+  Applications to image and text data,'' in {\em in Knowledge Discovery and
+  Data Mining}, pp.~245--250, ACM Press, 2001.
+
+\bibitem{Ullman}
+A.~Rajaraman and J.~D. Ullman, {\em Mining of Massive Datasets}.
+\newblock Cambridge University Press, 2011.
+
+\bibitem{Beyer}
+K.~Beyer, J.~Goldstein, R.~Ramakrishnan, and U.~Shaft, ``When is "nearest
+  neighbor" meaningful?,'' in {\em In Int. Conf. on Database Theory},
+  pp.~217--235, 1999.
+
+\bibitem{Urruty2007}
+T.~Urruty, C.~Djeraba, and D.~Simovici, ``Lecture notes in computer science,''
+  in {\em Advances in Data Mining. Theoretical Aspects and Applications}
+  (P.~Perner, ed.), vol.~4597, ch.~Clustering by Random Projections,
+  pp.~107--119, Springer Berlin Heidelberg, 2007.
+
+\bibitem{florescu09}
+I.~Florescu, A.~Molyboha, and A.~Myasnikov, ``Scaling and convergence of
+  projection sampling,'' 2009.
+
+\bibitem{fernrandom}
+X.~Z. Fern and C.~E. Brodley, ``Random projection for high dimensional data
+  clustering: A cluster ensemble approach,''
+
+\bibitem{avogadri09}
+R.~Avogadri and G.~Valentini, ``Fuzzy ensemble clustering based on random
+  projections for dna microarray data analysis,'' {\em Artificial Intelligence
+  in Medicine}, vol.~45, no.~2, pp.~173--183, 2009.
+
+\bibitem{Vattani}
+A.~Vattani, ``k-means requires exponentially many iterations even in the
+  plane,'' in {\em Proceedings of the 25th annual symposium on Computational
+  geometry}, SCG {'}09, (New York, NY, USA), pp.~324--332, ACM, 2009.
+
+\bibitem{panigrahy}
+R.~Panigrahy, ``Entropy based nearest neighbor search in high dimensions,'' in
+  {\em Proceedings of the seventeenth annual ACM-SIAM symposium on Discrete
+  algorithm}, SODA {'}06, (New York, NY, USA), pp.~1186--1195, ACM, 2006.
+
+\bibitem{Cohn}
+H.~Cohn and A.~Kumar, ``Optimality and uniqueness of the leech lattice among
+  lattices,'' tech. rep., 2004.
+
+\bibitem{Dasgupta2000}
+S.~Dasgupta, ``Experiments with random projection,'' in {\em Proceedings of the
+  Sixteenth conference on Uncertainty in artificial intelligence}, UAI{'}00,
+  (San Francisco, CA, USA), pp.~143--151, Morgan Kaufmann Publishers Inc.,
+  2000.
+
+\bibitem{Vardy95}
+A.~Vardy, ``Even more efficient bounded-distance decoding of the hexacode, the
+  golay code, and the leech lattice,'' {\em Information Theory, IEEE
+  Transactions on}, vol.~41, no.~5, pp.~1495--1499, 1995.
+
+\bibitem{Andoni}
+A.~Andoni, {\em Nearest Neighbor Search: the Old, the New, and the Impossible}.
+\newblock PhD thesis, MASSACHUSETTS INSTITUTE OF TECHNOLOGY, September 2009.
+
+\bibitem{hadoop}
+K.~Shvachko, H.~Kuang, S.~Radia, and R.~Chansler, ``The hadoop distributed file
+  system,'' in {\em Proceedings of the 2010 IEEE 26th Symposium on Mass Storage
+  Systems and Technologies (MSST)}, MSST {'}10, (Washington, DC, USA),
+  pp.~1--10, IEEE Computer Society, 2010.
+
+\bibitem{chowdhury}
+M.~Chowdhury, M.~Zaharia, and I.~Stoica, ``Performance and scalability of
+  broadcast in spark,''
+
+\bibitem{dbscan}
+M.~Ester, H.-P. Kriegel, J.~Sander, and X.~Xu, ``A density-based algorithm for
+  discovering clusters in large spatial databases with noise.,'' in {\em KDD},
+  vol.~96, pp.~226--231, 1996.
+
+\bibitem{clique}
+R.~Agrawal, J.~Gehrke, D.~Gunopulos, and P.~Raghavan, {\em Automatic subspace
+  clustering of high dimensional data for data mining applications}, vol.~27.
+\newblock ACM, 1998.
+
+\bibitem{clarans}
+R.~T. Ng and J.~Han, ``Clarans: A method for clustering objects for spatial
+  data mining,'' {\em Knowledge and Data Engineering, IEEE Transactions on},
+  vol.~14, no.~5, pp.~1003--1016, 2002.
+
+\bibitem{proclus}
+C.~C. Aggarwal, J.~L. Wolf, P.~S. Yu, C.~Procopiuc, and J.~S. Park, ``Fast
+  algorithms for projected clustering,'' in {\em ACM SIGMOD Record}, vol.~28,
+  pp.~61--72, 1999.
+
+\bibitem{subset1}
+R.~Kohavi and D.~Sommerfield, ``Feature subset selection using the wrapper
+  method: Overfitting and dynamic search space topology.,'' in {\em KDD},
+  pp.~192--197, 1995.
+
+\bibitem{subset2}
+P.~S. Bradley, O.~L. Mangasarian, and W.~N. Street, ``Clustering via concave
+  minimization,'' {\em Advances in neural information processing systems},
+  pp.~368--374, 1997.
+
+\bibitem{alweighted06}
+M.~Al-Razgan and C.~Domeniconi, ``Weighted clustering ensembles,'' in {\em
+  Proceedings of the SIAM international conference on data mining},
+  pp.~258--269, 2006.
+
+\end{thebibliography}

@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: ieeetr.bst
+Database file #1: refs.bib
+Too many commas in name 1 of "Gymrek M, McGuire AL, Golan D, Halperin E. and Y, Erlich" for entry deident
+while executing---line 969 of file ieeetr.bst
+Warning--empty author in presidential
+Warning--empty journal in carraher
+Warning--empty journal in florescu09
+Warning--empty booktitle in fernrandom
+Warning--empty year in fernrandom
+Warning--empty institution in Cohn
+Warning--empty journal in chowdhury
+Warning--empty year in chowdhury
+Warning--can't use both volume and number fields in clique
+Warning--can't use both volume and number fields in proclus
+You've used 33 entries,
+            1876 wiz_defined-function locations,
+            686 strings with 8802 characters,
+and the built_in function-call counts, 9211 in all, are:
+= -- 889
+> -- 287
+< -- 0
++ -- 109
+- -- 76
+* -- 621
+:= -- 1225
+add.period$ -- 36
+call.type$ -- 33
+change.case$ -- 30
+chr.to.int$ -- 0
+cite$ -- 43
+duplicate$ -- 519
+empty$ -- 961
+format.name$ -- 76
+if$ -- 2325
+int.to.chr$ -- 0
+int.to.str$ -- 33
+missing$ -- 34
+newline$ -- 107
+num.names$ -- 36
+pop$ -- 145
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 359
+stack$ -- 0
+substring$ -- 619
+swap$ -- 205
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 10
+while$ -- 78
+width$ -- 35
+write$ -- 319
+(There was 1 error message)
