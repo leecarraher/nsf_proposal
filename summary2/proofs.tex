@@ -1,0 +1,84 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{algorithm}
+\usepackage{algcompatible}
+%\usepackage{algorithm2e}
+\begin{document}
+
+From Perpinan and Carriera we have:\\
+Jacobian
+$$
+\textbf{J}(x^*) = {{1}\over{\sigma^2}}{\sum_{x\in X}{p(m | x)\mu_m{\mu_m}^\top - f(x)f(x)^\top}}
+$$
+Hessian
+$$
+\textbf{H}(x)={{\rho(x)}\over{\sigma^2}}\big(\textbf{J}(x)-\textbf{I}\big)
+$$
+Convergence Rate
+$$
+r = \underset{x\to\infty}{lim} {{|||x^{\tau+1}-x^*||}\over{x^\top - x^*}} = \lambda_{max} < 1
+$$
+
+following the proof of convergence for expectation maximization mean shift.\\
+we propose the addition from JL-thm under a random subspace projection $\textbf{P}_{n\to m}, n>m$ 
+and triangle inequalit distance preserving function $\textbf{d}(\cdot)$ , strictly:
+$$
+\textbf{d}(x,y)>\textbf{d}(\textbf{P}_{n\to m}^\top x,\textbf{P}_{n\to m}^\top y)
+$$
+therefor
+$$
+K(X)>K(\textbf{P}_{n\to m}^\top X), \forall x \in X
+$$
+then simply plug into the above jacobian.
+
+
+Proof of missing a top k
+$|B_k|$ is the cardinality of k
+simplification of annexstein
+$k = 1 \Rightarrow B_2$ is degenerate case\\
+probability of exactly half in a population:
+$${2}^{-n}\binom{n}{n/2}$$ 
+for nodes N its the probability of this not being even
+as pigeon hole principle will force one of the nodes to have $> |B_k|/N$
+$$\bigg({2}^{-n}\binom{n}{n/2}\bigg)^N$$
+the assymptotic complexity is deminated by $c^{-nN}$ which converges fast!\\
+figuring out what +1 means to the deviation under the cardinality distribution of
+buckets is put off for now...(probably difficult)\\
+now lets consider the bound on $|B_k|/N$ as $N$ increases:
+This is simple, its power law convergence: $n \over N$
+so put these together and we have a sandwich.
+$$\underset{N\rightarrow\infty}\lim{ {{\bigg({2}^{-n}\binom{n}{n/2}\bigg)^N} \over {n/N}}}$$
+using stirling's approximation for the binomial distribution:\\
+$$
+n! \sim \sqrt{2\pi n}\bigg({n\over e}\bigg)^n
+$$
+substitute in binomial distribution
+$$\binom{n}{n/2} = {{n!}\over{(n/2)!(n-n/2)!}} = {{n!}\over{2(n/2)!}} $$
+$$
+\approx{{\sqrt{2\pi N}\bigg({N\over e}\bigg)^N} \over{ 2\sqrt{\pi N}\bigg({{N/2}\over e}\bigg)^{N/2} }}
+$$
+drop out the constants...
+$$\approx \Theta \bigg({ {N^{N} }\over {N^{N/2}} }\bigg) = \Theta \big({N^{N/2} }\big)$$
+Plug this into the limit above, some constants can be fixed here to give a tight analysis, but we will stick with this approximation for
+simplicity. 
+$$\underset{N\rightarrow\infty}\lim
+{{\bigg({2}^{-N}{N^{N/2}}\bigg)^{N }} \over {n/N}}
+$$
+bottom n is constant, and near 1 lets drop it too
+$$\underset{N\rightarrow\infty}\lim
+{\bigg({2}^{-N}{N^{N/2}}\bigg)^{N }}
+$$
+so $2^{ -N^2}$ is converging quickly.
+is this faster than $N^{{N^2}\over{2}}$
+whoa! this grows really fast.
+
+$$\underset{N\rightarrow\infty}\lim
+{\bigg({2}^{-N}{N^{N/2}}\bigg)^{N }}\neq c
+$$
+
+
+\end{document}

@@ -3,10 +3,15 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: ieeetr.bst
 Database file #1: refs.bib
+Warning--empty author in presidential
+Warning--empty institution in anderberg1973
+Warning--can't use both volume and number fields in Proclus
+Warning--empty booktitle in distributeddata
+Warning--there's a number but no series in Zaki2000
 Too many commas in name 1 of "Gymrek M, McGuire AL, Golan D, Halperin E. and Y, Erlich" for entry deident
 while executing---line 969 of file ieeetr.bst
-Warning--empty author in presidential
 Warning--empty journal in carraher
+Warning--empty booktitle in cownie
 Warning--empty journal in florescu09
 Warning--empty booktitle in fernrandom
 Warning--empty year in fernrandom
@@ -14,46 +19,46 @@ Warning--empty institution in Cohn
 Warning--empty journal in chowdhury
 Warning--empty year in chowdhury
 Warning--can't use both volume and number fields in clique
-Warning--can't use both volume and number fields in proclus
-You've used 33 entries,
+Warning--empty institution in Freeman
+You've used 76 entries,
             1876 wiz_defined-function locations,
-            686 strings with 8802 characters,
-and the built_in function-call counts, 9211 in all, are:
-= -- 889
-> -- 287
-< -- 0
-+ -- 109
-- -- 76
-* -- 621
-:= -- 1225
-add.period$ -- 36
-call.type$ -- 33
-change.case$ -- 30
+            952 strings with 14988 characters,
+and the built_in function-call counts, 20798 in all, are:
+= -- 2033
+> -- 642
+< -- 1
++ -- 245
+- -- 169
+* -- 1414
+:= -- 2782
+add.period$ -- 85
+call.type$ -- 76
+change.case$ -- 69
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 519
-empty$ -- 961
-format.name$ -- 76
-if$ -- 2325
+cite$ -- 91
+duplicate$ -- 1151
+empty$ -- 2150
+format.name$ -- 169
+if$ -- 5261
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 34
-newline$ -- 107
-num.names$ -- 36
-pop$ -- 145
+int.to.str$ -- 76
+missing$ -- 79
+newline$ -- 242
+num.names$ -- 87
+pop$ -- 298
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 359
+skip$ -- 819
 stack$ -- 0
-substring$ -- 619
-swap$ -- 205
-text.length$ -- 0
+substring$ -- 1373
+swap$ -- 469
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 10
-while$ -- 78
-width$ -- 35
-write$ -- 319
+warning$ -- 15
+while$ -- 181
+width$ -- 78
+write$ -- 741
 (There was 1 error message)

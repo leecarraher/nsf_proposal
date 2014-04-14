@@ -1,8 +1,9 @@
 \begin{thebibliography}{10}
 
-\bibitem{mapreduce}
-J.~Dean and S.~Ghemawat, ``Mapreduce: Simplified data processing on large
-  clusters,'' {\em Commun. ACM}, vol.~51, pp.~107--113, jan 2008.
+\bibitem{presidential}
+``Privacy and progress in whole genome sequencing,'' report to the president,
+  Presidential Commission for the Study of Bioethical Issues, Washington,
+  October 2012.
 
 \bibitem{deanon1}
 X.~Ding, L.~Zhang, Z.~Wan, and M.~Gu, ``A brief survey on de-anonymization
@@ -14,27 +15,105 @@ A.~Narayanan and V.~Shmatikov, ``Robust de-anonymization of large sparse
   datasets,'' in {\em Security and Privacy, 2008. SP 2008. IEEE Symposium on},
   pp.~111--125, 2008.
 
+\bibitem{clusters}
+R.~Xu and .~I.~I. Wunsch, D., ``Survey of clustering algorithms,'' {\em Neural
+  Networks, IEEE Transactions on}, vol.~16, pp.~645--678, May 2005.
+
+\bibitem{anderberg1973}
+M.~R. Anderberg, ``Cluster analysis for applications,'' tech. rep., 1973.
+
+\bibitem{Samet}
+H.~Samet, {\em Foundations of Multidimensional and Metric Data Structures}.
+\newblock Morgan Kaufmann, 2006.
+
+\bibitem{waldo1997}
+J.~Waldo, G.~Wyant, A.~Wollrath, and S.~Kendall, {\em A note on distributed
+  computing}.
+\newblock Springer, 1997.
+
+\bibitem{Amdahl}
+G.~M. Amdahl, ``Validity of the single processor approach to achieving large
+  scale computing capabilities,'' in {\em Proceedings of the April 18-20, 1967,
+  Spring Joint Computer Conference}, AFIPS {'}67 (Spring), (New York, NY, USA),
+  pp.~483--485, ACM, 1967.
+
+\bibitem{Proclus}
+C.~C. Aggarwal, J.~L. Wolf, P.~S. Yu, C.~Procopiuc, and J.~S. Park, ``Fast
+  algorithms for projected clustering,'' in {\em ACM SIGMOD Record}, vol.~28,
+  pp.~61--72, 1999.
+
+\bibitem{Clarans}
+R.~T. Ng and J.~Han, ``Clarans: A method for clustering objects for spatial
+  data mining,'' {\em Knowledge and Data Engineering, IEEE Transactions on},
+  vol.~14, no.~5, pp.~1003--1016, 2002.
+
+\bibitem{latent1}
+J.~Magidson and J.~Vermunt, ``Latent class models for clustering: A comparison
+  with k-means,'' {\em Canadian Journal of Marketing Research}, vol.~20, no.~1,
+  pp.~36--43, 2002.
+
+\bibitem{Hofmann}
+T.~Hofmann, ``Unsupervised learning by probabilistic latent semantic
+  analysis,'' {\em Mach. Learn.}, vol.~42, pp.~177--196, Jan 2001.
+
+\bibitem{clusterstats}
+U.~V. Luxburg and S.~Ben-david, ``Towards a statistical theory of clustering,''
+  in {\em In PASCAL workshop on Statistics and Optimization of Clustering},
+  2005.
+
+\bibitem{Zass2005}
+R.~Zass and A.~Shashua, ``A unifying approach to hard and probabilistic
+  clustering,'' in {\em Computer Vision, 2005. ICCV 2005. Tenth IEEE
+  International Conference on}, vol.~1, pp.~294--301, Oct 2005.
+
+\bibitem{mpicluster}
+I.~Dhillon and D.~Modha, ``A data-clustering algorithm on distributed memory
+  multiprocessors,'' in {\em Large-Scale Parallel Data Mining} (M.~Zaki and
+  C.-T. Ho, eds.), vol.~1759, ch.~Lecture Notes in Computer Science,
+  pp.~245--260, Springer Berlin Heidelberg, 2000.
+
+\bibitem{distributeddata}
+B.-H. Park and H.~Kargupta, ``Distributed data mining: Algorithms, systems, and
+  applications,'' pp.~341--358, 2002.
+
+\bibitem{parclus}
+T.~Tamura, M.~Oguchi, and M.~Kitsuregawa, ``Parallel database processing on a
+  100 node pc cluster: Cases for decision support query processing and data
+  mining,'' {\em SC Conference}, vol.~0, p.~49, 1997.
+
+\bibitem{mapreduce}
+J.~Dean and S.~Ghemawat, ``Mapreduce: Simplified data processing on large
+  clusters,'' {\em Commun. ACM}, vol.~51, pp.~107--113, Jan 2008.
+
+\bibitem{hadoop}
+K.~Shvachko, H.~Kuang, S.~Radia, and R.~Chansler, ``The hadoop distributed file
+  system,'' in {\em Proceedings of the 2010 IEEE 26th Symposium on Mass Storage
+  Systems and Technologies (MSST)}, MSST {'}10, (Washington, DC, USA),
+  pp.~1--10, IEEE Computer Society, 2010.
+
+\bibitem{anders2010differential}
+S.~Anders and W.~Huber, ``Differential expression analysis for sequence count
+  data,'' {\em Genome biol}, vol.~11, no.~10, pp.~--106, 2010.
+
+\bibitem{Zaki2000}
+M.~J. Zaki and C.-T. Ho, {\em Large-scale parallel data mining}.
+\newblock No.~1759, Springer, 2000.
+
 \bibitem{deident}
 G.~D. H.~E. Gymrek~M, McGuire~AL and E.~Y, ``Identifying personal genomes by
   surname inference,'' {\em Science}, no.~339, pp.~321--324, 2013.
 
-\bibitem{presidential}
-``Privacy and progress in whole genome sequencing,'' report to the president,
-  Presidential Commission for the Study of Bioethical Issues, Washington,
-  October 2012.
+\bibitem{Lindell2000}
+Y.~Lindell and B.~Pinkas, ``Privacy preserving data mining,'' in {\em Advances
+  in Cryptology {---} CRYPTO 2000} (M.~Bellare, ed.), vol.~1880, ch.~Lecture
+  Notes in Computer Science, pp.~36--54, Springer Berlin Heidelberg, 2000.
 
 \bibitem{carraher}
-f.~a. l.~carraher, ``A parallel algorithm for query adaptive, locality
-  sensitive hash search,'' 2012.
+L.~Carraher, ``A parallel algorithm for query adaptive, locality sensitive hash
+  search,'' 2012.
 
-\bibitem{Ladner}
-R.~E. Ladner and M.~J. Fischer, ``Parallel prefix computation,'' {\em J. ACM},
-  vol.~27, pp.~831--838, oct 1980.
-
-\bibitem{dasgupta08}
-S.~Dasgupta, {\em The hardness of k-means clustering}.
-\newblock Department of Computer Science and Engineering, University of
-  California, San Diego, 2008.
+\bibitem{mpispec}
+T.~M. Forum, ``Mpi: A message passing interface,'' 1993.
 
 \bibitem{Mahajan09}
 M.~Mahajan, P.~Nimbhorkar, and K.~Varadarajan, ``The planar k-means problem is
@@ -42,12 +121,25 @@ M.~Mahajan, P.~Nimbhorkar, and K.~Varadarajan, ``The planar k-means problem is
   eds.), vol.~5431, ch.~Lecture Notes in Computer Science, pp.~274--285,
   Springer Berlin Heidelberg, 2009.
 
+\bibitem{dasgupta08}
+S.~Dasgupta, {\em The hardness of k-means clustering}.
+\newblock Department of Computer Science and Engineering, University of
+  California, San Diego, 2008.
+
+\bibitem{cownie}
+I.~C. James~Cownie, ``Multicore: The software view,'' June 2007.
+
+\bibitem{bourgain1985lipschitz}
+J.~Bourgain, ``On lipschitz embedding of finite metric spaces in hilbert
+  space,'' {\em Israel Journal of Mathematics}, vol.~52, no.~1-2, pp.~46--52,
+  1985.
+
 \bibitem{Achlioptas01}
 D.~Achlioptas, ``Database-friendly random projections,'' in {\em Proceedings of
   the twentieth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database
   systems}, pp.~274--281, 2001.
 
-\bibitem{Vempala}
+\bibitem{vempala}
 S.~S. Vempala, {\em The Random Projection Method}.
 \newblock DIMACS Series, American Mathematical Society, 2004.
 
@@ -55,6 +147,70 @@ S.~S. Vempala, {\em The Random Projection Method}.
 E.~Bingham and H.~Mannila, ``Random projection in dimensionality reduction:
   Applications to image and text data,'' in {\em in Knowledge Discovery and
   Data Mining}, pp.~245--250, ACM Press, 2001.
+
+\bibitem{Klein1988}
+R.~Klein, ``Abstract voronoi diagrams and their applications,'' in {\em
+  Computational Geometry and its Applications} (H.~Noltemeier, ed.), vol.~333,
+  ch.~Lecture Notes in Computer Science, pp.~148--157, Springer Berlin
+  Heidelberg, 1988.
+
+\bibitem{Fortune}
+S.~Fortune, ``A sweepline algorithm for voronoi diagrams,'' in {\em Proceedings
+  of the Second Annual Symposium on Computational Geometry}, SCG {'}86, (New
+  York, NY, USA), pp.~313--322, ACM, 1986.
+
+\bibitem{Gavrilova2003}
+M.~L. Gavrilova, ``An explicit solution for computing the euclidean
+  d-dimensional voronoi diagram of spheres in a floating-point arithmetic,'' in
+  {\em Computational Science and Its Applications {---} ICCSA 2003} (V.~Kumar,
+  M.~Gavrilova, C.~Tan, and P.~L{'}Ecuyer, eds.), vol.~2669, ch.~Lecture Notes
+  in Computer Science, pp.~827--835, Springer Berlin Heidelberg, 2003.
+
+\bibitem{Pless}
+P.~V. Huffman~W., {\em Fundamentals of Error-Correcting Codes}.
+\newblock Cambridge University Press, 1~ed., 2003.
+
+\bibitem{Datar}
+M.~Datar, N.~Immorlica, P.~Indyk, and V.~S. Mirrokni, ``Locality-sensitive
+  hashing scheme based on p-stable distributions,'' in {\em Proceedings of the
+  twentieth annual symposium on Computational geometry}, SCG {'}04, (New York,
+  NY, USA), pp.~253--262, ACM, 2004.
+
+\bibitem{Curtis}
+R.~T. Curtis, ``A new combinatorial approach to m24,'' {\em Mathematical
+  Proceedings of the Cambridge Philosophical Society}, vol.~79, no.~01,
+  pp.~25--42, 1976.
+
+\bibitem{SPLAG}
+J.~Conway and N.~Sloane, {\em Sphere Packings Lattices and Groups Third
+  Edition}.
+\newblock New York: Springer, 1998.
+
+\bibitem{leech}
+J.~Leech, ``Notes on sphere packings,'' {\em Canadian Journal of Mathematics},
+  1967.
+
+\bibitem{carraher-1}
+L.~A. Carraher, P.~A. Wilsey, and F.~S. Annexstein, ``A gpgpu algorithm for
+  c-approximate r-nearest neighbor search in high dimensions,'' in {\em
+  Parallel and Distributed Processing Symposium Workshops PhD Forum (IPDPSW),
+  2013 IEEE 27th International}, pp.~2079--2088, May 2013.
+
+\bibitem{Amrani}
+O.~Amrani, Y.~Be{'}ery, A.~Vardy, F.-W. Sun, and H.~C.~A. van Tilborg, ``The
+  leech lattice and the golay code: bounded-distance decoding and multilevel
+  constructions,'' {\em Information Theory, IEEE Transactions on}, vol.~40,
+  pp.~1030--1043, Jul 1994.
+
+\bibitem{Tarokh1}
+V.~Tarokh and I.~F. Blake, ``Trellis complexity versus the coding gain of
+  lattices. i,'' {\em Information Theory, IEEE Transactions on}, vol.~42,
+  pp.~1796--1807, Nov 1996.
+
+\bibitem{Agrell}
+E.~Agrell, T.~Eriksson, A.~Vardy, and K.~Zeger, ``Closest point search in
+  lattices,'' {\em Information Theory, IEEE Transactions on}, vol.~48,
+  pp.~2201--2214, Aug 2002.
 
 \bibitem{Ullman}
 A.~Rajaraman and J.~D. Ullman, {\em Mining of Massive Datasets}.
@@ -64,6 +220,10 @@ A.~Rajaraman and J.~D. Ullman, {\em Mining of Massive Datasets}.
 K.~Beyer, J.~Goldstein, R.~Ramakrishnan, and U.~Shaft, ``When is "nearest
   neighbor" meaningful?,'' in {\em In Int. Conf. on Database Theory},
   pp.~217--235, 1999.
+
+\bibitem{Han2006}
+J.~Han, M.~Kamber, and J.~Pei, {\em Data mining: concepts and techniques}.
+\newblock Morgan kaufmann, 2006.
 
 \bibitem{Urruty2007}
 T.~Urruty, C.~Djeraba, and D.~Simovici, ``Lecture notes in computer science,''
@@ -89,14 +249,28 @@ A.~Vattani, ``k-means requires exponentially many iterations even in the
   plane,'' in {\em Proceedings of the 25th annual symposium on Computational
   geometry}, SCG {'}09, (New York, NY, USA), pp.~324--332, ACM, 2009.
 
-\bibitem{panigrahy}
-R.~Panigrahy, ``Entropy based nearest neighbor search in high dimensions,'' in
-  {\em Proceedings of the seventeenth annual ACM-SIAM symposium on Discrete
-  algorithm}, SODA {'}06, (New York, NY, USA), pp.~1186--1195, ACM, 2006.
+\bibitem{Andoni}
+A.~Andoni, {\em Nearest Neighbor Search: the Old, the New, and the Impossible}.
+\newblock PhD thesis, Massachusetts Institute of Technology, September 2009.
 
 \bibitem{Cohn}
 H.~Cohn and A.~Kumar, ``Optimality and uniqueness of the leech lattice among
   lattices,'' tech. rep., 2004.
+
+\bibitem{ailon2006}
+N.~Ailon and B.~Chazelle, ``Approximate nearest neighbors and the fast
+  johnson-lindenstrauss transform,'' in {\em Proceedings of the thirty-eighth
+  annual ACM symposium on Theory of computing}, pp.~557--563, 2006.
+
+\bibitem{Dasgupta}
+A.~Dasgupta, R.~Kumar, and T.~Sarlos, ``A sparse johnson: Lindenstrauss
+  transform,'' in {\em Proceedings of the Forty-second ACM Symposium on Theory
+  of Computing}, STOC {'}10, (New York, NY, USA), pp.~341--350, ACM, 2010.
+
+\bibitem{ailon2013}
+N.~Ailon and E.~Liberty, ``An almost optimal unrestricted fast
+  johnson-lindenstrauss transform,'' {\em ACM Trans. Algorithms}, vol.~9,
+  pp.~21--1, Jun 2013.
 
 \bibitem{Dasgupta2000}
 S.~Dasgupta, ``Experiments with random projection,'' in {\em Proceedings of the
@@ -109,19 +283,43 @@ A.~Vardy, ``Even more efficient bounded-distance decoding of the hexacode, the
   golay code, and the leech lattice,'' {\em Information Theory, IEEE
   Transactions on}, vol.~41, no.~5, pp.~1495--1499, 1995.
 
-\bibitem{Andoni}
-A.~Andoni, {\em Nearest Neighbor Search: the Old, the New, and the Impossible}.
-\newblock PhD thesis, MASSACHUSETTS INSTITUTE OF TECHNOLOGY, September 2009.
+\bibitem{Sun}
+F.-W. Sun and H.~C.~A. van Tilborg, ``The leech lattice, the octacode, and
+  decoding algorithms,'' {\em Information Theory, IEEE Transactions on},
+  vol.~41, pp.~1097--1106, Jul 1995.
 
-\bibitem{hadoop}
-K.~Shvachko, H.~Kuang, S.~Radia, and R.~Chansler, ``The hadoop distributed file
-  system,'' in {\em Proceedings of the 2010 IEEE 26th Symposium on Mass Storage
-  Systems and Technologies (MSST)}, MSST {'}10, (Washington, DC, USA),
-  pp.~1--10, IEEE Computer Society, 2010.
+\bibitem{Be'ery}
+O.~Amrani and Y.~Beery, ``Efficient bounded-distance decoding of the hexacode
+  and associated decoders for the leech lattice and the golay code,'' {\em
+  Communications, IEEE Transactions on}, vol.~44, pp.~534--537, May 1996.
+
+\bibitem{Tarokh2}
+V.~Tarokh and I.~F. Blake, ``Trellis complexity versus the coding gain of
+  lattices. i,'' {\em Information Theory, IEEE Transactions on}, vol.~42,
+  pp.~1796--1807, Nov 1996.
+
+\bibitem{panigrahy}
+R.~Panigrahy, ``Entropy based nearest neighbor search in high dimensions,'' in
+  {\em Proceedings of the seventeenth annual ACM-SIAM symposium on Discrete
+  algorithm}, SODA {'}06, (New York, NY, USA), pp.~1186--1195, ACM, 2006.
 
 \bibitem{chowdhury}
 M.~Chowdhury, M.~Zaharia, and I.~Stoica, ``Performance and scalability of
   broadcast in spark,''
+
+\bibitem{reed2002}
+W.~J. Reed and B.~D. Hughes, ``From gene families and genera to incomes and
+  internet file sizes: Why power laws are so common in nature,'' {\em Physical
+  Review E}, vol.~66, no.~6, p.~067103, 2002.
+
+\bibitem{Karp}
+R.~M. Karp, S.~Shenker, and C.~H. Papadimitriou, ``A simple algorithm for
+  finding frequent elements in streams and bags,'' {\em ACM Trans. Database
+  Syst.}, vol.~28, pp.~51--55, mar 2003.
+
+\bibitem{Webb2000}
+G.~Webb, ``Multiboosting: A technique for combining boosting and wagging,''
+  {\em Machine Learning}, vol.~40, no.~2, pp.~159--196, 2000.
 
 \bibitem{dbscan}
 M.~Ester, H.-P. Kriegel, J.~Sander, and X.~Xu, ``A density-based algorithm for
@@ -133,15 +331,9 @@ R.~Agrawal, J.~Gehrke, D.~Gunopulos, and P.~Raghavan, {\em Automatic subspace
   clustering of high dimensional data for data mining applications}, vol.~27.
 \newblock ACM, 1998.
 
-\bibitem{clarans}
-R.~T. Ng and J.~Han, ``Clarans: A method for clustering objects for spatial
-  data mining,'' {\em Knowledge and Data Engineering, IEEE Transactions on},
-  vol.~14, no.~5, pp.~1003--1016, 2002.
-
-\bibitem{proclus}
-C.~C. Aggarwal, J.~L. Wolf, P.~S. Yu, C.~Procopiuc, and J.~S. Park, ``Fast
-  algorithms for projected clustering,'' in {\em ACM SIGMOD Record}, vol.~28,
-  pp.~61--72, 1999.
+\bibitem{Boutsidis}
+C.~Boutsidis, A.~Zouzias, and P.~Drineas, ``Random projections for $k$-means
+  clustering,'' {\em CoRR}, vol.~abs/1011.4632, 2010.
 
 \bibitem{subset1}
 R.~Kohavi and D.~Sommerfield, ``Feature subset selection using the wrapper
@@ -152,6 +344,19 @@ R.~Kohavi and D.~Sommerfield, ``Feature subset selection using the wrapper
 P.~S. Bradley, O.~L. Mangasarian, and W.~N. Street, ``Clustering via concave
   minimization,'' {\em Advances in neural information processing systems},
   pp.~368--374, 1997.
+
+\bibitem{Yang}
+Y.~Yang and K.~Chen, ``Temporal data clustering via weighted clustering
+  ensemble with different representations,'' {\em Knowledge and Data
+  Engineering, IEEE Transactions on}, vol.~23, pp.~307--320, Feb. 2011.
+
+\bibitem{Kaski98}
+S.~Kaski, ``Dimensionality reduction by random mapping: Fast similarity
+  computation for clustering,'' 1998.
+
+\bibitem{Freeman}
+J.~Freeman, ``Parallel algorithms for depth-first search,'' Tech. Rep.
+  MS-CIS-91-71, October 1991.
 
 \bibitem{alweighted06}
 M.~Al-Razgan and C.~Domeniconi, ``Weighted clustering ensembles,'' in {\em

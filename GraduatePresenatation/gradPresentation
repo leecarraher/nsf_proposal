@@ -1,0 +1,797 @@
+
+\documentclass{beamer}
+
+%% bring in my standard setup actions
+\usepackage{setup}
+\usepackage{subfigure}
+\usepackage{bibentry}
+\usepackage[lined]{algorithm2e}
+
+\usepackage[small]{caption}
+\usepackage{subcaption}
+
+\usepackage{tikz}
+\usetikzlibrary{intersections,shapes.arrows}
+\usetikzlibrary{arrows,patterns}
+
+\nobibliography{refs}
+
+\setbeamertemplate{footnote}{%
+  \hangpara{2em}{1}%
+  \makebox[2em][l]{\insertfootnotemark}\footnotesize\insertfootnotetext\par%
+}
+
+
+\title[Graduate Seminar]{Random Projection, Generative Lattices, and Redundancy to Combat Scalability Bounds In Distributed Computing}
+\author[Lee Carraher]{\textsf{Lee A. Carraher}}
+\institute[Univ. of Cincinnati]{
+  School of Electronic and Computing Systems \\
+  University of Cincinnati \\
+}
+
+
+
+
+\begin{document}
+
+\setbeamertemplate{footnote}{%
+  \hangpara{2em}{1}%
+  \makebox[2em][l]{\insertfootnotemark}\footnotesize\insertfootnotetext\par%
+}
+%----------- titlepage ----------------------------------------------%
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+
+\begin{frame}{Introduction}
+\begin{itemize}
+\item From Cincinnati
+\item B.S. Computer Engineering (UC 2008)
+\item M.S. Computer Science (UC 2012)
+\begin{itemize}
+\item Advisor Prof. Fred Annexstein
+\end{itemize}
+\item Ph.D Computer Engineering (ongoing)
+\begin{itemize}
+\item Advisor: Prof. Fred Annexstein
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Interests}
+Some research interests:
+\begin{itemize}
+\item Machine Learning (bioinformatics, filtering)
+\item Inverse Problems (min/max problems)
+\item Parallel Computing (CUDA, MPI)
+\item Distributed Computing (Mapreduce, Spark)
+\item Big Data
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Motivations}
+\begin{centering}\emph{``What are the important problems of your field?"\\ - Richard Hamming }
+
+\end{centering}
+\end{frame}
+
+
+
+\begin{frame}{Data Storage is Cheap}
+\begin{itemize}
+\item Store Everything Because it's cheap (NSA...)
+\end{itemize}
+
+\begin{figure}
+  \centering \includegraphics[scale=.3]{doc/hd-cost-graph}
+\end{figure}
+\end{frame}
+
+
+
+
+
+\begin{frame}{\emph{Big} Problems in Computing}
+Two problems:
+\begin{enumerate}
+\item We are storing more data than we can effectively process ($n\rightarrow \infty$)
+\item Stagnated Clock speeds
+\begin{itemize}
+\item materials problem
+\item energy problem
+\item fundamental cooling problem (Landauer's Principle)
+\end{itemize}
+\end{enumerate}
+%Clock speed stagnation is a result of many things, materials scientist will say we need faster transistors
+%ee's will site energy requirements. physicist will say thermal entropy limits, and anyone with a laptop 
+% on there lap will all to well understand cooling requirements
+\end{frame}
+
+\def\firstcircle{(0,0) circle (2.0cm)}
+\def\secondcircle{(60:3.5cm) circle (2.0cm)}
+\def\thirdcircle{(0:3.5cm) circle (2.0cm)}
+\begin{frame}{Ways To Attack Computing Problems}
+
+
+
+\begin{tikzpicture}
+
+    \begin{scope}[shift={(4cm,-5cm)}, fill opacity=0.4]
+        \fill[red] \firstcircle;
+        \fill[green] \secondcircle;
+        \fill[blue] \thirdcircle;
+        \draw \firstcircle node[  below ,text=black] {\emph{Faster Processors}};
+        \draw \secondcircle node [ above ,text=black] {\emph{More Processors}};
+        \draw \thirdcircle node [ below,text=black] {\emph{Better Algorithms}};
+    \end{scope}
+\end{tikzpicture}
+%\begin{figure}
+%  \centering \includegraphics[scale=.4]{doc/bigdatarqrm}
+%\end{figure}
+\end{frame}
+
+\begin{frame}{Parallel Computing}
+Simple, Add more processors!\\
+\textbf{Basic Issues}
+\begin{itemize}
+\item Communication Bottlenecks
+\item Algorithmic Bottlenecks
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Scaled Speedup Example}
+\begin{figure}
+  \centering \includegraphics[scale=.42]{doc/speedupQuery}
+\end{figure}
+\begin{itemize}
+\item 80/20 rule (Pareto) isn't even on here!
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Ways To Attack Computing Problems}
+\begin{tikzpicture}
+
+    \begin{scope}[shift={(4cm,-5cm)}, fill opacity=0.4]
+        \fill[red] \firstcircle;
+        \fill[fill=green , pattern=north east lines,pattern] \secondcircle;
+        \fill[blue] \thirdcircle;
+        \draw \firstcircle node[  below ,text=black] {\emph{Faster Processors}};
+        \draw \secondcircle node [ above ,text=black] {\emph{More Processors}};
+        \draw \thirdcircle node [ below,text=black] {\emph{Better Algorithms}};
+    \end{scope}
+\end{tikzpicture}
+%\begin{figure}
+%  \centering \includegraphics[scale=.4]{doc/bigdatarqrm}
+%\end{figure}
+\end{frame}
+
+
+\begin{frame}{Has Moore's Law Stalled?}
+\begin{figure}
+  \centering \includegraphics[scale=.50]{doc/CPU}
+\end{figure}
+\begin{itemize}
+\item Clock speed is dead.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ways To Attack Computing Problems}
+\begin{tikzpicture}
+
+    \begin{scope}[shift={(4cm,-5cm)}, fill opacity=0.4]
+        \fill[red, pattern=north east lines,pattern] \firstcircle;
+        \fill[fill=green , pattern=north east lines,pattern] \secondcircle;
+        \fill[blue] \thirdcircle;
+        \draw \firstcircle node[  below ,text=black] {\emph{Faster Processors}};
+        \draw \secondcircle node [ above ,text=black] {\emph{More Processors}};
+        \draw \thirdcircle node [ below,text=black] {\emph{Better Algorithms}};
+    \end{scope}
+\end{tikzpicture}
+%\begin{figure}
+%  \centering \includegraphics[scale=.4]{doc/bigdatarqrm}
+%\end{figure}
+\end{frame}
+
+\begin{frame}{Better Algorithms?}
+\begin{itemize}
+\item This attack plan is not well defined
+\item Some algorithms are optimal
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ways To Attack Computing Problems}
+
+
+
+
+\begin{tikzpicture}
+
+    \begin{scope}[shift={(4cm,-5cm)}, fill opacity=0.4]
+        \fill[red, pattern=north east lines,pattern] \firstcircle;
+        \fill[fill=green ] \secondcircle;
+        \fill[blue] \thirdcircle;
+        \draw \firstcircle node[  below ,text=black] {\emph{Faster Processors}};
+        \draw \secondcircle node [ above ,text=black] {\emph{More Processors}};
+        \draw \thirdcircle node [ below,text=black] {\emph{Better Algorithms}};
+        \clip  \secondcircle;
+        \fill[red] \thirdcircle ;
+    \end{scope}
+\end{tikzpicture}
+    \begin{itemize}
+    \item What about the overlaps?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{RPHASH}
+\textbf{Random Projection Hashing Goals:}
+\begin{itemize}
+\item Scalability 
+\item Minimize Communication Complexity
+\end{itemize}
+\textbf{Tradeoff:}
+\begin{itemize}
+\item Redundancy 
+\item Accuracy
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Related Work}
+\textbf{Database Clustering Methods}
+\begin{itemize}
+\item DBScan 
+\item Clique
+\item CLARANS
+\item Proclus 
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Background}
+\begin{itemize}
+\item Big Data
+\item COD
+\item Locality Sensitive Hash Functions
+\item Space Partitioning
+\item Lattices
+\begin{itemize}
+\item A Decoding Example
+\item Leech Lattice
+\item Leech Decoder
+\end{itemize}
+\item Functional Programming
+\item MR/Hadoop
+\item Random Projection
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Working Definition of ``Big Data"}
+Sales and Commercial hype aside,
+\begin{Definition}[Big Data]
+A set of data processing problems in which the required data is too large to reside in main memory.
+\end{Definition}
+Thrashing between MM and HD(even solid state) $\triangleright$ unscalable algorithm
+\begin{itemize}
+\item Health Metrics
+\item DNA Sequences
+\item Website/Click Metrics 
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}{COD}
+\textbf{Curse of Dimensionality}\\
+    COD is sometimes cited as the cause for the distance function loosing its usefulness for high dimensions.\bibentry{Beyer}
+   This arises from the ratio of metric space partitioning to hypersphere embedding.
+$$
+\lim_{d\to \infty} {Vol(S_d) \over Vol(C_d)}  =  
+{
+{ \pi^ {d/2} }
+\over
+{ d  2^{d-1} \varGamma (d/2)  }  } \rightarrow    0
+$$
+Given a single distribution, the minimum and the maximum 
+distances become indiscernible. \bibentry{Beyer} Or the relative majority
+of space is outside of the sphere  
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle{LSH Hash Families}
+\begin{Definition}[Locality Sensitive Hash Function]
+let $\mathbb{H}=\{h:S \rightarrow U\}$ is $(r_1,r_2,p_1,p_2)-$sensitive if for any $u,v\in S$
+ \begin{enumerate}
+   \item if $d(u,v) \leq r_1$ then $Pr_{\mathbb{H}}[h(u)=h(v)]\geq p_1$
+   \item if $d(u,v) > r_2$ then $Pr_{\mathbb{H}}[h(u)=h(v)]\leq p_2$
+ \end{enumerate}
+\end{Definition}
+ For this family $\rho={\log{p_1}\over \log{p_2}}$
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{An Example Hash Family}
+\begin{figure}
+  \centering \includegraphics[scale=.32]{doc/randpro}
+  \caption{Random Projection of $\mathbb{R}^2 \rightarrow \mathbb{R}^1$}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Voronoi Tiling}
+Voronoi partitioning is optimal in 2D.
+\begin{figure}
+  \centering \includegraphics[scale=.25]{doc/Voronoi.png}
+  \caption{Voronoi Partitioning of $\mathbb{R}^2$}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}\frametitle{Voronoi}
+\begin{itemize}
+\item Voronoi diagrams make for very efficient hash functions in 2d because, by definition, a point within a 
+Voronoi region is nearest to the regions representative point.
+
+\item \textbf{Voronoi regions provide an optimal solution to the NN partitioning in 2-d Space!}
+
+\item However, for arbitrary dimension d, Voronoi diagrams require $\Theta(n^{d/2})$-space, and no known optimal point location algorithms exists.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}\frametitle{Lattices}
+Instead we will consider lattices, which provide regular space partitioning
+and scale to arbitrarily large dimensional space, and have sub-linear nearest center 
+search algorithms associated with them.
+
+\begin{Definition}[Lattice in $\mathbb{R}^n$]
+ let $v_1, ... , v_n$ be $n$ linear independent vectors where $v_i=v_{i,1}, v_{i,2}, ... ,v_{i,n}$ 
+The lattice $\Lambda$ with basis $\{v_1, ... , v_n\}$ is the set of all integer combinations of $v_1, ... , v_n$
+the integer combinations of the basis vectors are the points of the lattice.
+$$\Lambda = \{z_1v_1+z_2v_2+ ... +z_nv_n | z_i\in \mathbb{Z}, 1 \leq i \leq n\}$$\bibentry{Pless}
+\end{Definition}
+\end{frame}
+
+\begin{frame}\frametitle{Examples in 2D}
+\begin{figure}
+  \centering \includegraphics[scale=.40]{doc/SqLat}
+  \caption{Square(left) and Hexagonal(right) Lattices in $\mathbb{R}^2$}\
+\end{figure}
+\end{frame}
+
+\begin{frame}\frametitle{Constant Time Decoding}
+\begin{itemize}
+\item Certain lattices allow us to find the nearest representative point in constant time.
+\item For example the above square lattice. 
+\begin{itemize}
+\item The nearest point can be found by simply rounding our real valued point to its nearest integer.
+\end{itemize}
+\item  With the exception of a few \textbf{exceptional} lattices, more complex lattices have more complex searches (exponential as d increases \bibentry{Tarokh2} ).
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{ \textbf{Exceptional} Higher Dimensional Lattices}
+The previous lattices work well in $\mathbb{R}^2$, but our data spaces are in general $\gg2$.
+\begin{itemize}
+\item fortunately there are some higher dimensional lattices, with efficient nearest center search algorithms. 
+\item $E_8$ or Gosset's Lattice, is one such lattice in 
+\item  it is also the densest lattice packing in $\mathbb{R}^{8}$\bibentry{Blich}. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Example of decoding $E_8$}
+$E_8$ can be formed by gluing two $D_8$ integer lattices together and shifting by a vector of $1\over2$. This gluing of less dense lattices and shifting by a ``glue vector''
+is a common theme in finding dense lattices.
+\begin{itemize}
+ \item Decoding $D_8$ is simple
+ \item $E_8$  = $D_8 \cap D_8+{{1}\over{2}}$
+\item both cosets of $D_8$ can be computed in parallel
+\item $D_8$'s decoding algorithm consists of rounding all values to their nearest integer value \textbf{s.t} they sum to an even number
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Example of decoding $E_8$}
+define $f(x)$ and $g(x)$ to round the components of x, except in $g(x)$ we round the furthest value from an integer in the wrong direction.
+\newline
+let 
+$$
+x = <0.1, 0.1, 0.8, 1.3, 2.2, -0.6, -0.7, 0.9 >
+$$
+then
+$$
+f(x) = <0, 0, 1, 1, 2, -1, -1, 1 >, sum = 3
+$$and
+$$
+g(x) = <0, 0, 1, 1, 2, \textbf{0}, -1, 1 >, sum = 4
+$$
+\begin{itemize}
+\item since $g(x)$ is even, it is the nearest lattice point in $D_8$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Example of decoding $E_8$ conti.}
+.
+\begin{itemize}
+\item Include the coset $\cap D_8 + {{1}\over{2}}$. 
+\item We can do this by subtracting ${{1}\over{2}}$ from all the values of x.
+\end{itemize}
+$$f(x-{{1}\over{2}}) = <0, 0, 0, 1, 2, -1, -1, 0 >, sum = 1$$
+$$g(x-{{1}\over{2}}) = <\textbf{-1}, 0, 0, 1, 2, -1, -1, 0 > sum = 0$$
+Now we find the coset representative that is closest to $x$ using a simple distance metric.
+$$||x - g(x) ||^2 = 0.65$$
+$$||x - g(x{{1}\over{2}}) ||^2 = 0.95$$
+So this case it is the first coset representative: $$<0, 0, 1, 1, 2, 0, -1, 1 >$$
+
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Leech Lattice}
+By gluing sets of E8 together in a way originally conceived by Curtis' MOG, we can get an even
+higher dimensional dense lattice called the Leech lattice.
+\end{frame}
+
+\begin{frame}\frametitle{Leech Lattice}
+Here we will state some attributes of the leech lattice as well as give a comparison to other lattices by way of $Eb/N_0$ and the computational
+cost of decoding.
+\newline
+Some Important Attributes:
+\begin{itemize}
+\item Densest Regular Lattice Packing in $\mathbb{R}^{24}$
+\item Lattice Construction can be based on 2 cosets $\mathbb{G}_{24}$
+\item Sphere Packing Density: ${{\pi^{12}}\over{12!}} \approx 0.00192957$
+\item $K_{min}=196560$
+\end{itemize}
+\end{frame}
+\begin{frame}{Leech Lattice}
+\begin{figure}
+  \centering \includegraphics[scale=.25]{doc/allCodesE8bwlines}
+  \caption{Performance of Some Coded and Unencoded Data Transmission Schemes}\label{erroCodes}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Leech Lattice Decoding}
+Some information about the decoding algorithm: 
+\begin{itemize}
+\item The decoding of the leech lattice is based closely on the Decoding of the Golay Code. 
+\item In general, advances in either Leech decoding or binary Golay decoding imply an advance in the other. 
+\item The decoding method used in this implementation is based on Amrani and Be'ery's '96\bibentry{Amrani} publication for decoding the
+Leech lattice, and consists of around 519 floating point operations and suffers a gain loss of only 0.2bB.
+\item In general decoding complexity scales exponentially with dimension.\bibentry{Tarokh1}
+\end{itemize}
+Next is an outline of the decoding process.
+\end{frame}
+
+\begin{frame}\frametitle{Leech Decoder}
+\begin{figure}
+  \centering \includegraphics[scale=.23]{doc/DecoderBlockDiagram}
+  \caption{Leech Lattice Decoder}\label{decoderBlock}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}\frametitle{Functional Programming}
+
+\begin{figure}
+  \centering \includegraphics[scale=.15]{doc1/Scargill-Mountain.jpg}
+  \caption{Scargill, by Tim (timble.me.uk/blog/author/tim)}\label{decoderBlock}
+\end{figure}
+\textbf{Parallel and Functional Programming}
+\begin{itemize}
+\item Instead of moving the mountain to the people,Move the the people to the mountains
+\item Where mountains are data and people are functions respectively
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Map Reduce Program Design}
+\begin{figure}
+  \centering \includegraphics[scale=.43]{doc/mapreduce}
+  \caption{Map Reduce (courtesy: map-reduce.wikispaces.asu.edu}\label{mrv1}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}\frametitle{Hadoop}
+\begin{figure}
+  \centering \includegraphics[scale=.2]{doc1/hadoop}
+\end{figure}
+Hadoop is an open source implementation of the map reduce framework
+created and maintained by the Apache Software Group.
+\textbf{Benefits}
+\begin{itemize}
+\item Open Source
+\item Popular, and Maintained
+\item Free
+\item Implemented and compatible with Amazon EC2
+\item Takes care of the networking and fault tolerance drudgery of parallel system programming.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Hadoop Parallel System Design}
+\begin{figure}
+  \centering \includegraphics[scale=.8]{doc1/map_reduce}
+  \caption{Hadoop System Design (ibm.com/developerworks)}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}{EC2 Cloud}
+\begin{figure}
+  \centering \includegraphics[scale=.3]{doc1/ec2}
+\end{figure}
+\textbf{Cloud and Distributed Services}
+\begin{itemize}
+\item Scalable to data processing problems needs
+\item Very Low Cost Processing Model
+\item Always Up to Data HW Resources
+\item Zero HW maintenance and overhead costs
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}\frametitle{Mahout}
+\begin{figure}
+  \centering \includegraphics[scale=.20]{doc1/mahout}
+\end{figure}
+Mahout is an open source library of machine learning algorithms made for Hadoop.
+\\
+\textbf{Clustering Algorithms:}
+\begin{itemize}
+\item Canopy Clustering
+\item K-Means
+\item Mean Shift
+\item LDA
+\item MinHash
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Random Projection}
+\begin{figure}
+  \centering \includegraphics[scale=.50]{doc/projplane}
+  \caption {Random Projection: $\mathbb{R}^3 \rightarrow \mathbb{R}^2$}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}\frametitle{Random Projection}
+\begin{Theorem}[JL - Lemma]
+$$
+(1-\epsilon) \|u-u'\|^2 \leq \|f(u)-f(u')\|^2 \leq (1+\epsilon) \| u-u' \|^2
+$$
+\end{Theorem}
+$\epsilon$ - is an distortion quantity\\
+$u,u' \in U$ - two independent vectors\\
+$f$ - a random projection mapping\\
+$$ \mathbb{R}^d\rightarrow \mathbb{R}^l $$
+$$ l \propto\Theta( {{log(n)}\over{\varepsilon^2 log(1/\varepsilon) }})$$
+
+\end{frame}
+
+
+
+\begin{frame}\frametitle{FJLT}
+\textbf{Fast Johnson-Lindenstrauss Transform}
+\begin{itemize}
+\item New and cool!
+\item Using Heisenberg Uncertainty in Harmonic Analysis, a spectrum and its signal cannot both be concentrated
+\item Precondition projection with DFT, (some matrices have very fast DFTs)
+\item $\approx \Theta(d\log(d) + \epsilon^{-3}\log^2(n))$ vs $\Theta(d\epsilon^{-2}\log(n))$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Motivations of RP Hash}
+\begin{itemize}
+\item Parallel Structure of a scalable parallel algorithm (Log Reduce)
+\item Low Communication Overhead (Hashes)
+\item Non -Parallel Iterative Structure (Per core redundancy)
+\item Approximation is usually good enough
+\end{itemize}
+\end{frame}
+
+\begin{frame}{General Idea of RPHash}
+\begin{figure}
+  \centering \includegraphics[scale=.60]{doc/randproj}
+   \caption{Multi-Probe Random Projection Intersection Probabilities}
+\end{figure}
+\begin{itemize}
+\item generative space quantization
+\item random projection
+\item sequential multi-probe stochastic process
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Occultation Problem}
+The occultation problem is the probability of two or more independent distributions overlapping in
+projected space.
+\begin{itemize}
+\item based on the distribution variance and angle of the projective plane
+\item Applicable bounds from Urruty '07. $d$ is number of probes
+\begin{itemize}
+\item$\underset {d\rightarrow \infty}{lim}1-\bigg({{2(r_1+r_2)}\over {\pi \|d-c\|}}\bigg)^d$
+\end{itemize}
+\item In RPHash, $d$ is the dimensionality (24).
+\item RPHash projections are orthogonal
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sequential algorithm}
+\begin{enumerate}
+\item Generate Random Projection matrix $P$
+\item Maintain $DB_{count}$ of hash id's
+\item Maintain $DB_{cent}$  Array of centroids corresponding to vectors
+\item Forall $x \in X$:
+\begin{enumerate}
+\item index $= LatticeDec(x P^{\top})$ 
+\item $DB_{count}$[ID]$++$
+\item $DB_{cent}$[ID]$ += x$
+\end{enumerate}
+\item sort[$DB_{count},DB_{cent}$]
+\item return $DB_{cent}[0:k]$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Comparison with standard k-means}
+
+\end{frame}
+
+\begin{frame}{Sequential Algorithm Time Results}
+\begin{figure}
+  \centering \includegraphics[scale=.15]{doc/TimevaryPart}
+\end{figure}
+\begin{figure}
+  \centering \includegraphics[scale=.15]{doc/TimevaryDim}
+\end{figure}
+\end{frame}
+\begin{frame}{Sequential Algorithm Accuracy Results}
+
+\begin{figure}
+  \centering \includegraphics[scale=.15]{doc/PRvaryClusters}
+\end{figure}
+\begin{figure}
+  \centering \includegraphics[scale=.15]{doc/PRvaryDim}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}{Scalability Goal}
+\begin{itemize}
+\item It would be nice if our algorithm scaled with the number of processing nodes
+\item lets look at an algorithm that scales well and try to apply it to our problem
+\item the canonical hadoop "Hello World" simulacrum "Word Count" is a good place to start 
+\end{itemize}
+\end{frame}
+\begin{frame}{Hadoop Word Count}
+\begin{figure}
+  \centering \includegraphics[scale=.3]{doc1/wordcount}
+
+\end{figure}
+\end{frame}
+
+\begin{frame}{Hadoop Word Count Scalability}
+\begin{figure}
+  \centering \includegraphics[scale=.60]{doc1/wcscale}
+
+\end{figure}
+\end{frame}
+\begin{frame}{Basic Outline}
+\begin{itemize}
+\item Each processing node computes hashes and counts
+\item Share the top k buckets to all computers
+\item Aggregate all centroid averages
+\end{itemize}
+\textbf{A Trick to minimize communication and storage reqrmnt.}
+\begin{itemize}
+\item Two Phase:
+\item Phase 1: Only store counts and communicate IDs
+\item Phase 2: Only accept hash collisions with Phase 1's top IDs for all clusters
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Parallel Algorithm Phase 1}
+  \begin{algorithm}[H]
+  
+  \Begin{ $X=\{x_1,...,x_n\}$, $x_k \in \mathbb{R}^m$ - data vectors\\
+ $D$ - set of available compute nodes\\
+$\mathbb{H}$ - is a d dimensional LSH function\\
+ $\widetilde{X} \subseteq X$ - vectors per compute node\\
+ $\mathbb{P}_{m\rightarrow d}$ - Gaussian projection matrix\\
+ $C_s=\{\varnothing\}$ - set of bucket collision counts\\
+\ForEach{$x_k \in \widetilde{X}$} {
+ $\tilde{x_k}\leftarrow \sqrt{{m}\over{d}}\mathbb{P}^{\intercal}x_k $\\
+$t = \mathbb{H}(\tilde{x_k})$\\
+$C_s[t]=C_s[t]+1$\\
+}\\
+sort($\{C_s,C_s.index\}$)
+\Return $\{C_s,C_s$.index$\} [0 : k\log(n)]$
+  }
+  \end{algorithm}
+\end{frame}
+
+
+\begin{frame}{Parallel Algorithm Phase 2}
+\scalebox{0.80}{%
+\begin{algorithm}[H]
+
+  \Begin{ 
+    $X=\{x_1,...,x_n\}$, $x_k \in \mathbb{R}^m$ - data vectors\\
+    $D$ - set of available compute nodes\\
+    $\{C_s,C_s.$index$\}$ - set of $klogn$ cluster IDs and counts\\
+    $\mathbb{H}$ - is a $d$-dimensional LSH function\\
+    $\widetilde{X} \subseteq X$ - vectors per compute node\\
+    $p_{m\rightarrow d}\in \mathbb{P}$ - Gaussian projection matrices\\
+    $C=\{\varnothing\}$ - set of centroids\\
+    \ForEach{$x_k \in \widetilde{X}$}{
+      \ForEach{$p_{m\rightarrow d} \in \widetilde{\mathbb{P}}$} {
+	\\ $\tilde{x_k}\leftarrow \sqrt{{m}\over{d}}p^{\intercal}x_k $
+	\\ $t = \mathbb{H}(\tilde{x_k})$
+	\If{$t \in C_s.$index}{
+	  $C[t]=C[t]+x_k$
+	}
+      }
+    }
+\Return ${C}$
+}
+  \end{algorithm}
+  }
+\end{frame}
+
+
+
+\begin{frame}{What to Use this For?}
+\begin{figure}
+  \centering \includegraphics[scale=.20]{doc1/genomics}
+   \caption{Gene Expression Levels in Primary Breast Cancer Tumor Samples}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Data Security in BioInformatics}
+\begin{figure}
+  \centering \includegraphics[scale=.25]{doc1/privacypres}
+\end{figure}
+\begin{itemize}
+\item New attacks on anonymized data present a risk to patients privacy.  
+\item Very few cloud services guarantee secure processing.
+\item Highly distributed systems add even more attack vectors.
+\item Attacks prompted a  Presidential commission on WGS privacy.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Data Security: A Freebie!}
+\begin{itemize}
+\item Random Projection Offers Some Protections
+\item The only full vectors transmitted are cluster centroids, which by definition are an aggregate of many vectors.
+\item Showing dissimilarity should be somewhat straightforward
+\begin{itemize}
+\item $v = \sqrt{{{n}\over{k}}}R^Tu , v' = \sqrt{{{k}\over{n}}}v^T \hat{R}^{-1}$
+\item $similarity = ||v,v'||_{2}$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+Questions ?
+\end{frame}
+
+
+\end{document}

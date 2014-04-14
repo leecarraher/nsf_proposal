@@ -1,0 +1,52 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{algorithm}
+\usepackage{algcompatible}
+%\usepackage{algorithm2e}
+\begin{document}
+From Perpinan and Carriera we have:\\
+Jacobian
+$$
+\textbf{J}(x^*) = {{1}\over{\sigma^2}}{\sum_{x\in X}{p(m | x)\mu_m{\mu_m}^\top - f(x)f(x)^\top}}
+$$
+Hessian
+$$
+\textbf{H}(x)={{\rho(x)}\over{\sigma^2}}\big(\textbf{J}(x)-\textbf{I}\big)
+$$
+Convergence Rate
+$$
+r = \underset{x\to\infty}{lim} {{|||x^{\tau+1}-x^*||}\over{x^\top - x^*}} = \lambda_{max} < 1
+$$
+
+following the proof of convergence for expectation maximization mean shift.\\
+we propose the addition from JL-thm under a random subspace projection $\textbf{P}_{n\to m}, n>m$ 
+and triangle inequalit distance preserving function $\textbf{d}(\cdot)$ , strictly:
+$$
+\textbf{d}(x,y)>\textbf{d}(\textbf{P}_{n\to m}^\top x,\textbf{P}_{n\to m}^\top y)
+$$
+therefor
+$$
+K(X)>K(\textbf{P}_{n\to m}^\top X), \forall x \in X
+$$
+then simply plug into the above jacobian.
+
+Proof of missing a top k
+$|B_k|$ is the cardinality of k
+simplification of annexstein
+$k = 1 \Rightarrow B_2$ is degenerate case\\
+probability of exactly half in a population:
+$$\bigg({2}^{-n}\binom{n}{n/2}$$ 
+for nodes N its the probability of this not being even
+as pigeon hole principle will force one of the nodes to have $> |B_k|/N$
+$$\bigg({2}^{-n}\binom{n}{n/2}\bigg)^N$$
+the assymptotic complexity is deminated by $c^{-nN}$ which converges fast!\\
+figuring out what +1 means to the deviation under the cardinality distribution of
+buckets is put off for now...(probably difficult)\\
+now lets consider the bound on $|B_k|/N$ as $N$ increases:
+This is simple, its power law convergence: $n \over N$
+
+\end{document}

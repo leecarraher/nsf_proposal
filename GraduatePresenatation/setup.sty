@@ -1,0 +1,25 @@
+
+\usepackage{xcolor}
+
+%% use palatino as the default font
+\usepackage{palatino} 	
+
+%% use a background image on the slides instead of one of the coloration schemes 
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{doc/ucLogo}}
+
+%% get rid of the navigation symbols at the bottom of each slide
+%%\setbeamertemplate{navigation symbols}{}
+\beamertemplatenavigationsymbolsempty
+
+%% put page number in bottom right corner
+\setbeamertemplate{footline}[frame number]
+
+%% define the colors for uc red and uc black
+\definecolor{ucRed}{rgb}{238,0,0}
+\definecolor{ucBlack}{rgb}{15,1,22}
+
+%% change the coloration; 'structure' changes list items colors
+\setbeamercolor{title}{fg=ucRed}
+\setbeamercolor{frametitle}{fg=ucRed}
+\setbeamercolor{structure}{fg=ucRed}
+

@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.3)  12 APR 2014 13:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.3)  10 MAR 2014 12:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**Summary.tex
+(./Summary.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 2 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -315,16 +315,8 @@ Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 \c@subfigure=\count90
 \c@subtable=\count91
 )
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip44
-\f@ncyO@elh=\skip45
-\f@ncyO@erh=\skip46
-\f@ncyO@olh=\skip47
-\f@ncyO@orh=\skip48
-\f@ncyO@elf=\skip49
-\f@ncyO@erf=\skip50
-\f@ncyO@olf=\skip51
-\f@ncyO@orf=\skip52
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
@@ -440,11 +432,11 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip53
+\Hy@SectionHShift=\skip44
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip54
+\@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -494,8 +486,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \totwidth@=\dimen125
 \lineht@=\dimen126
 \@envbody=\toks21
-\multlinegap=\skip55
-\multlinetaggap=\skip56
+\multlinegap=\skip46
+\multlinetaggap=\skip47
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
@@ -514,9 +506,9 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headfont=\toks25
 \thm@notefont=\toks26
 \thm@headpunct=\toks27
-\thm@preskip=\skip57
-\thm@postskip=\skip58
-\thm@headsep=\skip59
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
 \dth@everypar=\toks28
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -550,13 +542,13 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \c@ALG@line=\count116
 \c@ALG@rem=\count117
 \c@ALG@nested=\count118
-\ALG@tlm=\skip60
-\ALG@thistlm=\skip61
+\ALG@tlm=\skip51
+\ALG@thistlm=\skip52
 \c@ALG@Lnr=\count119
 \c@ALG@blocknr=\count120
 \c@ALG@storecount=\count121
 \c@ALG@tmpcounter=\count122
-\ALG@tmplength=\skip62
+\ALG@tmplength=\skip53
 )
 Document Style - algorithmic compatible environments for the `algorithmicx' sty
 le
@@ -564,25 +556,25 @@ le
 \c@Theorem=\count123
  (/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
-) (./main.aux)
-\openout1 = `main.aux'.
+)
+(./Summary.aux)
+\openout1 = `Summary.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count124
 \scratchdimen=\dimen127
@@ -614,7 +606,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 46.
+Package hyperref Info: Link coloring OFF on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -624,194 +616,40 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count130
 )
-LaTeX Info: Redefining \ref on input line 46.
-LaTeX Info: Redefining \pageref on input line 46.
-LaTeX Info: Redefining \nameref on input line 46.
+LaTeX Info: Redefining \ref on input line 54.
+LaTeX Info: Redefining \pageref on input line 54.
+LaTeX Info: Redefining \nameref on input line 54.
 
-(./main.out) (./main.out)
+(./Summary.out) (./Summary.out)
 \@outlinefile=\write3
-\openout3 = `main.out'.
+\openout3 = `Summary.out'.
 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 12.0pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.134 \newpage
-               [2]pdfTeX warning (ext4): destination with the same identifier (
-name{section.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.150 \section{Project Overview}
-                                 [1] [2] [3]
-LaTeX Font Info:    Try loading font information for U+msa on input line 388.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 388.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 393.
-
-
-Overfull \hbox (7.02579pt too wide) in paragraph at lines 417--422
-\OT1/cmr/bx/n/10 Definition 2.2 \OT1/cmr/m/n/10 (Lat-tice in $\U/msb/m/n/10 R[]
-$ \OT1/cmr/m/n/10 [[]36[]])\OT1/cmr/bx/n/10 . \OT1/cmr/m/it/10 let $\OML/cmm/m/
-it/10 v[]; :::; v[]$ \OT1/cmr/m/it/10 be $\OML/cmm/m/it/10 n$ \OT1/cmr/m/it/10 
-lin-ear in-de-pen-dent vec-tors where $\OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 = \
-OML/cmm/m/it/10 v[]; v[]; :::; v[]$
- []
-
-<doc/parallel.pdf, id=230, 1177.39874pt x 994.71625pt>
-File: doc/parallel.pdf Graphic file (type pdf)
- <use doc/parallel.pdf>
-Package pdftex.def Info: doc/parallel.pdf used on input line 445.
-(pdftex.def)             Requested size: 353.22235pt x 298.41718pt.
-
-[4] [5 <./doc/parallel.pdf>]
-<doc/projplane.pdf, id=309, 303.1325pt x 346.29375pt>
-File: doc/projplane.pdf Graphic file (type pdf)
- <use doc/projplane.pdf>
-Package pdftex.def Info: doc/projplane.pdf used on input line 569.
-(pdftex.def)             Requested size: 145.50194pt x 166.2191pt.
-
-[6] <doc/randproj.pdf, id=328, 269.005pt x 200.75pt>
-File: doc/randproj.pdf Graphic file (type pdf)
- <use doc/randproj.pdf>
-Package pdftex.def Info: doc/randproj.pdf used on input line 615.
-(pdftex.def)             Requested size: 147.9532pt x 110.41283pt.
-
-<doc/PRvaryClusters.pdf, id=330, 1156.32pt x 653.14014pt>
-File: doc/PRvaryClusters.pdf Graphic file (type pdf)
-
-<use doc/PRvaryClusters.pdf>
-Package pdftex.def Info: doc/PRvaryClusters.pdf used on input line 641.
-(pdftex.def)             Requested size: 221.95676pt x 125.3636pt.
-
-<doc/PRvaryDim.pdf, id=331, 1156.32pt x 653.14014pt>
-File: doc/PRvaryDim.pdf Graphic file (type pdf)
- <use doc/PRvaryDim.pdf>
-Package pdftex.def Info: doc/PRvaryDim.pdf used on input line 646.
-(pdftex.def)             Requested size: 221.95676pt x 125.3636pt.
-
-[7 <./doc/projplane.pdf> <./doc/randproj.pdf>]
-<doc/TimevaryPart.pdf, id=363, 1156.32pt x 653.14014pt>
-File: doc/TimevaryPart.pdf Graphic file (type pdf)
-
-<use doc/TimevaryPart.pdf>
-Package pdftex.def Info: doc/TimevaryPart.pdf used on input line 719.
-(pdftex.def)             Requested size: 221.95676pt x 125.3636pt.
-
-<doc/TimevaryDim.pdf, id=364, 1156.32pt x 653.14014pt>
-File: doc/TimevaryDim.pdf Graphic file (type pdf)
-
-<use doc/TimevaryDim.pdf>
-Package pdftex.def Info: doc/TimevaryDim.pdf used on input line 724.
-(pdftex.def)             Requested size: 221.95676pt x 125.3636pt.
- [8 <./doc/PRvaryClusters.pdf> <./doc/PRvaryDim.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./doc/PRvaryDim.pdf): PDF inclusion: mu
-ltiple pdfs with page group included in a single page
->] [9 <./doc/TimevaryPart.pdf> <./doc/TimevaryDim.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./doc/TimevaryDim.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
->] <doc/varynodes.pdf, id=743, 1445.4pt x 742.57423pt>
-File: doc/varynodes.pdf Graphic file (type pdf)
- <use doc/varynodes.pdf>
-Package pdftex.def Info: doc/varynodes.pdf used on input line 854.
-(pdftex.def)             Requested size: 317.98898pt x 163.36684pt.
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 859.
-
-[10 <./doc/varynodes.pdf>] [11]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1031
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1031.
-
- [12] [13] [14]
-[15] (./main.bblpdfTeX warning (ext4): destination with the same identifier (na
-me{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.106 \bibitem{Lindell2000}
-                            [1]pdfTeX warning (ext4): destination with the same
- identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.204 
-       [2]pdfTeX warning (ext4): destination with the same identifier (name{pag
-e.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.295 
-       [3])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1241.
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1241 \end{document}
-                      [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1241.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1241.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1241.
-
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0E686E5B3F510F4CC54171D96AA19F3D;2232.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1241.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
+ (./Summary.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
+Package rerunfilecheck Info: File `Summary.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 8485 strings out of 495031
- 123437 string characters out of 6181532
- 211473 words of memory out of 5000000
- 11422 multiletter control sequences out of 15000+600000
- 10442 words of font info for 38 fonts, out of 8000000 for 9000
+ 7991 strings out of 495031
+ 117267 string characters out of 6181532
+ 203449 words of memory out of 5000000
+ 11106 multiletter control sequences out of 15000+600000
+ 4286 words of font info for 16 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 36i,10n,43p,253b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (21 pages, 440955 bytes).
+ 36i,4n,38p,256b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Summary.pdf (2 pages, 34153 bytes).
 PDF statistics:
- 982 PDF objects out of 1000 (max. 8388607)
- 545 compressed objects within 6 object streams
- 143 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 25 PDF objects out of 1000 (max. 8388607)
+ 18 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

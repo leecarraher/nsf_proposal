@@ -125,12 +125,13 @@ ocncerns and confusion caused by the wide variety of available distributed
 algorithms \cite{clusters}.  A multitude of surveys \cite{clusters} have
 been made available comparing different aspects of clustering algorithms,
 such as accuracy, complexity and application domain.  Fields in health and
-biology are benefited by data clustering scalability.  Bioinformatic problems 
-such as Micro Array clustering, Protein-Protein interaction clustering, medical
-resource decision making, medical image processing, and clustering of 
-epidemiological events all serve to benefit from larger dataset sizes. 
-Furthermore, the proposed method provides data anonymization through destructive manipulation of the data preventing de-anonymization attacks beyond standard 
-best practices database security methods.
+biology are benefited by data clustering scalability.  Such fields as Micro
+Array clustering, Protein-Protein interaction clustering, medical resource
+decision making, medical image processing, and clustering of epidemiological
+events all serve to benefit from larger dataset sizes. Furthermore, the
+proposed method provides data anonymization through destructive manipulation
+of the data preventing de-anonymization attacks beyond standard best practices
+database security methods.
 \newpage
 \pagenumbering{arabic}
 \setcounter{section}{0}
@@ -149,27 +150,24 @@ best practices database security methods.
 % time cost.\end{abstract}
 \section{Project Overview}
 Data clustering is
-an inherent problem in data analysis.	It is the principle work horse of many
-types of pilot data analysis and various data retrieval methods.  Due to
-its importance in machine learning, data clustering is studied extensively
-in computing and mathematics\cite{anderberg1973,Samet,clusters}.  In addition 
-to advancements in data clustering, 
-Many challenges to algorithm design are presented by the changes in computing architectures, resulting from changing use cases, market trends, and underlying 
-physical design limits. Multi-processor architectures
-and distributed computing are one such area of change, that is rapidly 
-overtaking sequential computing 
-prompting a fundamental restructuring in algorithmic design\cite{waldo1997}.
-Furthermore, optimal coordination of many independent processors is an open
-problem with fundamental communication scalability issues\cite{Amdahl}.
-Random Projection Hash(\emph{RPHash}) was expressly created for minimizing
-parallel communication overhead while providing algorithmic scalability.
-The shortcomings of various other parallel methods will be discussed in
-this proposal with suggestions on how \emph{RPHash} can overcome them.
-Many parallel clustering algorithms have been converted to function
-efficiently on parallel and distributed systems, however they often have
-potential issues regarding their asymptotic scalability\cite{Proclus},
-dimensionality in which they are effective\cite{Clarans}, and robustness
-to noise.
+ an inherent problem in data analysis.	It is the principle work horse of many
+ types of pilot data analysis and various data retrieval methods.  Due to
+ its importance in machine learning, data clustering is studied extensively
+ in computing and mathematics\cite{anderberg1973,Samet}.  In lieu of the
+ progress in data clustering,
+the ever changing computing landscape also moves forward.  Multi-processor
+architectures
+ and distributed computing are rapidly overtaking sequential computing
+ prompting a fundamental restructuring in algorithmic design\cite{waldo1997}.
+ Random Projection Hash(\emph{RPHash}) was expressly created for minimizing
+ parallel communication overhead while providing algorithmic scalability.
+ The shortcomings of various other parallel methods will be discussed in
+ this proposal with suggestions on how \emph{RPHash} can overcome them.
+ Many parallel clustering algorithms have been converted to function
+ efficiently on parallel and distributed systems, however they often have
+ potential issues regarding their asymptotic scalability\cite{Proclus},
+ dimensionality in which they are effective\cite{Clarans}, and robustness
+ to noise.
 \emph{RPHASH} is a method proposed for large scale distributed data clustering
 combining locality sensitive hash functions and multi-probe random projection
 for distributed approximate data clustering.  Clustering is an inherent
@@ -357,22 +355,14 @@ knowledge engineering.	It is used in a range of problems from practical
 data localization and search, to helping augment the understanding of complex
 biological, social, and physical structures.  Although the problem itself has
 been shown to be NP-Hard\cite{dasgupta08,Mahajan09}, many algorithms exist that
-usually terminate in polynomial time with good results.  
-\subsection{Big Data Clustering} In light of the ``Big Data'' revolution, many 
-machine learning algorithms have been adapted to work with very large, often
-distributed datasets.
-Data storage costs have exponentially decreased, while raw clock speeds, 
-commonly on a similar exponential trajectory, have stagnated\cite{cownie}. To 
-maintain the expected Moore's law speedup, chip-makers have resorted to 
-increasing the number of processing units per microprocessor. Overall this has 
-resulted in a need for new parallel algorithms that support both massive 
-datasets while also leveraging parallel processing architectures.
-
-The goal of clustering remains the same, however memory and network constraints 
-tend to dominate the running time requirements over algorithmic complexity 
-alone. \emph{RPHash} is a clustering algorithm designed from the ground up to 
-deal with these problems head on.  Instead of modifying an existing algorithm 
-to perform better across networks and distributed systems, \emph{RPHash} trades
+usually terminate in polynomial time with good results.  \subsection{Big Data
+Clustering} In light of the ``Big Data'' revolution, many machine learning
+algorithms have been modified to work on very large, distributed datasets.
+The goal of clustering is the same, however memory and network constraints tend
+to dominate the running time requirements over algorithmic complexity alone.
+\emph{RPHash} is a clustering algorithm designed from the ground up to deal
+with these problems head on.  Instead of modifying an existing algorithm to
+perform better across networks and distributed systems, \emph{RPHash} trades
 redundant computation for lower memory and network bandwidth requirements
 through the use of random projections, and universally deterministic hashes.
 \subsection{Random Projection Methods} Random projection is a method where
@@ -414,8 +404,8 @@ them inefficient for partitioning arbitrary dimensions and consequently,
 \emph{RPHash}.	Instead, a lattice structure is considered, with rotation
 and shifting transformations to compensate for gaps between spheres.
 \begin{Definition}[Lattice in $\mathbb{R}^n$\cite{Pless}]
-let $v_1, ...  , v_n$ be $n$ linear independent vectors where $v_i=v_{i,1}, 
-v_{i,2}, ...  ,v_{i,n}$ 
+ let $v_1, ...  , v_n$ be $n$ linear independent vectors where $v_i=v_{i,1}, 
+ v_{i,2}, ...  ,v_{i,n}$ 
 The lattice $\Lambda$ with basis $\{v_1, ...  , v_n\}$ is the set of all 
 integer combinations of $v_1, ...  , v_n$
 the integer combinations of the basis vectors are the points of the lattice.
@@ -512,13 +502,13 @@ resource management tasks required for parallel processing.
 \textbf{Hadoop} is a freely distributed, open source implementation of the
 mapreduce framework.  Currently in its second generation utilizing the new
 Yarn resource manager, Hadoop is a fully developed Map Reduce framework
-that is highly optimized for parallel data processing.  Hadoop will provide the
-parallel communication and networking infrastructure while the map and reduce
-abstract methods will provide the parallel design of \emph{RPHash}.
+that is highly optimized for data communication.  Hadoop will provide the
+parallel communication and networking infrastructure and the map and reduce
+abstract methods will provide the overall parallel design of \emph{RPHash}.
 
 
 
-\section{Proposed Research} Clustering algorithms offer insight to a multitude
+\section{Proposed Research} Clustering algorithms offer insight in a multitude
 of data analysis problems.  Clustering algorithm are however, often limited
 in their scalability and parallel speedup due to communication bottlenecks.
  A variety of methods have been  proposed to combat this issue with varying
@@ -535,10 +525,7 @@ better under k-means and other similar algorithms.  For this reason, clustering
 massive datasets, although suffering from unbounded complexity guarantees, is
 still a very active area in computing research.  Due to approximate solution's
 real world proclivity to useful results, randomized methods are commonly
-used tools for overcoming complexity growth. The concept of random projection
-clustering is not new, having been explored in a variety papers involving
-high dimensional data clustering\cite{Proclus}.
-In the Random Projection
+used tools for overcoming complexity growth.  In the Random Projection
 Hash(\emph{RPHash}) algorithm, both approximate and randomized techniques
 are employed to provide a scalable, approximate parallel system for massive
 dataset clustering.  To combat the curse of dimensionality(COD) \emph{RPHash}
@@ -546,10 +533,9 @@ performs multi-probe, random projection of high dimensional vectors to the
 unique subset boundaries of the Leech Lattice($\Lambda_{24}$)\cite{Andoni}.
 
 \subsection{Objective 1: Develop the  Sequential \emph{RPHash} Algorithm}
-Although \emph{RPHash} is a parallel algorithm, initially a sequential variant 
-will be developed to show its overall efficacy on various datasets for 
-comparison with common clustering
-algorithms such as K-means and mean shift.  The primary goal of this objective
+The \emph{RPHash} algorithm will be initially developed in this objective
+to show its efficacy on various datasets in comparison to common clustering
+methods such as K-means and mean shift.  The primary goal of this objective
 is to develop the sequential per compute node portion of the algorithm.
 A light sequential wrapper for the parallel centroid aggregation will be
 created in this step to demonstrate and test.
@@ -583,18 +569,18 @@ subspace such that all points are linearly separable with $\epsilon$-distortion
  $d \propto {\Omega({{ log(n) }\over {\epsilon^2 log 1/\epsilon}  })}$.
  Although many options for projections exists, a simple and sufficient 
 method for high dimensions is to form the projection matrix 
-$r_{ij}\in\textbf{R}$ is $m\times d$ as follows:
+$r_{ij}\in\textbf{R}$ is $m\times d$ as follows\cite{Achlioptas01} :
 \[
     r_{ij}= 
 \begin{cases}
     +1, & \text{with probability } {1 \over 6}\\
      0, & \text{with probability } {2 \over 3}\\
     -1, & \text{with probability } {1 \over 6}\\
-\end{cases}\text{\cite{Achlioptas01}}
+\end{cases}
 \]
 The approximation of a random projection is computationally
 efficient for large datasets, and unlike a truly Gaussian projection matrix,
-yields a semi-positive definite projection matrix, which will likely be
+yeilds a semi-positive definite projection matrix, which will likely be
 useful in proving the convergence of \emph{RPHash}.
 
 In addition to Achlioptas efficient random projection method for
@@ -617,41 +603,14 @@ further improve \emph{RPHash}'s overall runtime complexity.
 Cardinalities}
 \end{figure}
 
-\textbf{Overview of the sequential algorithm:} The
+\textbf{Overview of the sequential algorithm} The
 basic intuition of \emph{RPHash} is to combine multi-probe random projection
-with discrete space quantization.  Following this intuition, near-neighbor
-vectors are often projected to the same partition of the space quantizer, 
-which is regarded as a hash collision in LSH parlance. As an extension, 
-multi-probe projection ensures that regions of high 
-density in the original vector space are projected probabilistically more 
-often to the same partitions that correspond to density modes
-in the original data. In other words, partitions with high collision rates
-are good candidates for cluster centroids.
-To follow common parameterized, k-means methods, the
-top k densest regions will be selected. Preliminary results of this process
-can be found in Figure \ref{praccuracy}, in which k-means(green) and a 
-simplified \emph{RPHash}(blue) algorithm were compared using 50:50 
-precision-recall analysis for 
-varying number of Gaussian distributed clusters and number of dimensions 
-respectively. From the result, \emph{RPHash}'s accuracy appears to be a viable,
-somewhat worse performing alternative to k-means clustering. 
-\begin{figure}
-        \centering
-        \begin{subfigure}[b]{0.49\textwidth}
-                \includegraphics[width=\textwidth]{doc/PRvaryClusters}
-                %\caption{Varying Clusters}
-                \label{PRaccClu}
-        \end{subfigure}
-        \begin{subfigure}[b]{0.49\textwidth}
-                \includegraphics[width=\textwidth]{doc/PRvaryDim}
-                %\caption{Varying Dimensions}
-                \label{PRaccDim}
-        \end{subfigure}
-	 \caption{Precision-Recall for K-Means(green) and \emph{RPHash}(blue) 
-              varying Vectors and Clusters}\label{praccuracy}
-\end{figure}
+with discrete space quantization.  Regions of high density are then regarded
+as centroid candidates.  To follow common parameterized, k-means methods, the
+top k regions will be selected.  Alternatively, a minimal density parameter
+for candidate clusters could serve similarly.
 
-According to
+ According to
 \emph{JL} lemma, the sub-projections will conserve the pairwise distances
 in the projected space for points with $\epsilon$-distortion in which
 the size of the dataset is proportional to the logarithm of the number of
@@ -660,10 +619,10 @@ a dataset to a computationally more feasible subspace for performing space
 quantization, random projection can also make \emph{eccentric} cluster more
 spherical\cite{Dasgupta2000,vempala}.
 
-Discrete space quantizers play a central role in the \emph{RPHash} algorithm.
-The sequential implementation of the \emph{RPHash} algorithm will rely on the 
-efficient Leech lattice decoder of Vardy, Sun, Be'ery, and Amrani
-\cite{Vardy95,Sun,Be'ery,Amrani} used as a space quantizer.  The lattice
+The use of discrete space quantizers in the \emph{RPHash} algorithm is
+discussed below.  This implementation of the general \emph{RPHash} algorithm
+will rely on the remarkably efficient Leech lattice decoder of Vardy, Sun,
+Be'ery, and Amrani\cite{Vardy95,Sun,Be'ery,Amrani} as a space quantizer.  This
 decoder implementation relies on the decomposition of the binary $(24,22,8)$
 extended Golay Code into 4 partitions of the $(6,3,4)$ quaternary hexacode
 and its relation to the Leech Lattice as a type B lattice construction.
@@ -680,6 +639,8 @@ subspace partitioned by the Leech Lattice is small enough to exhibit the
 spherical clustering benefit of random projection.  Low distortion random
 embeddings are also feasible for very large datasets ($n = \Omega(c^{24})$)
 objects while avoiding the occultation phenomena\cite{Urruty2007}.
+
+
 Furthermore, the decoding of the Leech lattice is a well studied subject,
 with a constant worse case decoding complexity of 331 operations\cite{Vardy95}.
 
@@ -703,16 +664,7 @@ find lattice hash IDs that on average generate more collisions, than others.
 The the top $k$ cardinality set of lattice hash ID vector subsets represent
 regions of high density.  The centroids are computed from the means of the
 non-overlapping subsets of vectors for each high cardinality lattice hash ID.
-The algorithm used above has a natural extension to the parallel algorithm
-describe in the following section.
 
-In Figure \ref{timecomplex}, initial analysis of time complexity for 
-k-means(green)
-and \emph{RPHash}(blue) on a single processing node, suggest an overall linear complexity
-for varying number of data vectors and dimensions on Gaussian data. For a 
-single processor, K-means surpasses \emph{RPHash}. The result is not unexpected
-however, as \emph{RPHash} intentionally trades sequential processing complexity
-for parallel communication independence. 
 \begin{figure}
         \centering
         \begin{subfigure}[b]{0.49\textwidth}
@@ -729,6 +681,26 @@ for parallel communication independence.
                varying Vectors and Dimensions}\label{timecomplex}
 \end{figure}
 
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.49\textwidth}
+                \includegraphics[width=\textwidth]{doc/PRvaryClusters}
+                %\caption{Varying Clusters}
+                \label{PRaccClu}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\textwidth}
+                \includegraphics[width=\textwidth]{doc/PRvaryDim}
+                %\caption{Varying Dimensions}
+                \label{PRaccDim}
+        \end{subfigure}
+	 \caption{Precision-Recall for K-Means(green) and \emph{RPHash}(blue) 
+              varying Vectors and Clusters}\label{praccuracy}
+\end{figure}
+
+
+The algorithm used above has a natural extension to the parallel algorithm
+describe in the following section.
+
 \subsection{Objective 2:  Develop A distributed version of the proposed
 \emph{RPHash} Algorithm} A key aspect of generative groups such as the
 IDs of lattice centers in the Leech Lattice, is that their values are
@@ -744,16 +716,13 @@ algorithm, or reduce operation on Hadoop.
 %Ladner requiring $\Theta(n)$-steps
 %and $\Theta(log(c))$ communications for $c$ computing nodes\cite{Ladner}.
 
-Algorithmic adaptations to from sequential \emph{RPHash} to a parallel 
-sum problem are yet another common
-tool for acheiving a work efficient scalable parallel algorithm.
+Algorithmic adaptations to parallel sum problem are yet another common
+tool for attaining parallel scalability and limiting complexity growth.
 Due to the work efficient parallel complexity of the reduce function, the
 overall complexity of \emph{RPHash} is asymptotically no worse than its per
 compute node sequential complexity.  This complexity, as previously stated
-is dominated by the number of hash probes required to assure near-neighbor
-collisions for random projections of the $n$ vectors($\Theta(nlog(n))$).  
-
-Another common issue with parallel scalability,
+is dominated by the number of required random projection hash probes for $n$
+vectors($\Theta(nlog(n))$).  Another common issue with parallel scalability,
 is the data transfer bottleneck.  Although data transfer overhead cannot be
 completely eliminate, it can be minimize significantly be decoupling the
 data using generative groups relying on probable outcomes.  \emph{RPHash}
@@ -761,9 +730,9 @@ achieves this by adopting a two step approach to clustering with little
 negative effect on accuracy.  The one step data transfer requirement for
 directly applied parallel sum is on the order of the dimensionality of the
 vectors and the expected number of large clusters which may be parameterized
-as some $\epsilon k$.  Furthermore, the real communication requirement can be 
-further minimize by only gathering the computed IDs, and using the fact that 
-the smallest, top $k$ cluster's cardinality $\hat{c_{k}}$, must be, at most
+as some $\epsilon k$.  The real communication requirement can be further
+minimize by only gathering the computed IDs, and using the fact that the
+smallest, top $k$ cluster's cardinality $\hat{c_{k}}$, must be, at most
 greater than all other compute node's partial sums.  Otherwise, there must
 exists a cluster $\hat{c}_{k+1}$, where $|\hat{c}_{k+1}| > |\hat{c}_{k}|$,
 therefor $\hat{c}_{k}\nsubseteq C$ and should not be a candidate centroid.
@@ -788,27 +757,22 @@ algorithmic form (\ref{Phase1} and \ref{Phase2} respectively).
 %\]\caption*{Mean-Shift Iteration\cite{Fajie}}
 %\end{wrapfigure}
 %\textbf{Fine-Grain Iteration:}
-\textbf{Phase 1 of Parallel \emph{RPHash}: Maximum Bucket Counting:}
-
+\textbf{Phase 1 of Parallel \emph{RPHash}: Maximum Bucket Counting.}
 As \emph{RPHash} is a distributed algorithm, the data vectors reside on
 $D$ independent computing nodes, connected through some non-specific,
 Hadoop\cite{hadoop} compatible network hardware.  The system architecture
 will utilize the Yarn \emph{MR}v2 resource manager for task scheduling and
-network communication load balancing. With much of the parallel task scheduling
- details handled by Yarn \emph{MR}v2, the following algorithm description will
-focus on the per compute node task level processing.  
-
-As the random projections can
+network communication.	With much of the parallel task scheduling details
+handled by Yarn \emph{MR}v2, the following algorithm description will
+focus on the per compute node task level.  As the random projections can
 be performed independently, the compute node interdependency is very low.
 Due to the Leech lattice's set dimensionality, conversion between vectors of
 $\mathbb{R}^d$ and $\mathbb{R}^{24}$  will be performed by a random projection
 matrix of random variables following a nearly Gaussian distribution as in
-Achlioptas\cite{Achlioptas01}.  Therefor the first parallel task is to 
-distribute a random projection matrix to each compute node.  The communication 
-load can be further minimized by noting that the random projection matrix,
-although, stated as random, is actually the result of a pseudo-random 
-computation.
-
+Bingham\cite{bingham}.	Therefor the first parallel task is to distribute
+a random projection matrix to each compute node.  The communication load
+can be further minimized by noting that the random projection matrix,
+although, stated as random, is actually the result of a pseudo-random.
 A trade-off exists between the communication cost of distributing a large
 $\mathbb{P}_{m\rightarrow d}$ and the redundant calculation of such data
 per compute node.  Parallel processing tuning is an effective solution to
@@ -829,20 +793,23 @@ compute nodes.	The set of lattice ID counts is sorted, and the $k$-largest
 Leech lattice IDs are broadcast to all compute nodes for Phase 2 processing.
 The bucket count aggregation step is susceptible to missing top k buckets
 under non-random density mode distribution among computing nodes.  Initial
-testing, Figure \ref{reduxcounts}, on power law distributed bucket cardinality, 
-a common distribution for object-class memberships in natural processes
-\cite{reed2002}, shows diminishing effects on the missed cluster rate for 
-dataset sizes($10^5$(red),$10^{5.5}$(green),$10^6$(blue)) as the algorithm
-scales to more processors. The decreasing missed bucket rate corresponding to
-the overall dataset size increase, can be attributed to the ``law of large 
-numbers'', which results in each processing node being assigned a partition of
-bucket counts that is representational of the overall dataset.
+testing suggests the effects of adding more nodes, changing the database
+size or changing $k$ has minimal effect on log reduced bucket cardinality
+when the cardinalities are power law distributed.  Power law distributed
+cluster membership is common in many natural processes\cite{reed2002}.
+%The lattice region IDs are generative,  and can be assigned either by
+%truncating %the ID mod the number of available  compute nodes, or some
+%more advanced load balancing technique based on the  number of vectors per
+%compute node.Using techniques from Andoni \cite{Andoni} and an addition
+%from Carraher\cite{Carraher}, computation of the function $N(\cdot)$
+%of near neighbors for a given point can be performed in nearly optimal
+%$\Theta(n^\rho)$-time.	
+For a Leech lattice hash function where $d \leq24$,
+$\rho \approx 0.2671 $\cite{Andoni}, while linear search requires $\Theta(d
+n)$-operations.  This gives an internal clustering complexity of $\Theta(k
+n^{1+\rho} )$ where $k$ is the number of vectors per compute node.
 
-\begin{figure}%{l}{0.44\textwidth}
-\centering
-\includegraphics[scale=0.22]{doc/varynodes.pdf}
-\caption{Random projection on a plane\label{reduxcounts}}
-\end{figure}
+
 
 \begin{algorithm}
 \caption{Phase1 \emph{RPHash} Clustering}\label{Phase1}
@@ -1226,3 +1193,4 @@ algorithm on commercially available cloud resources.  \end{itemize}
 \bibliography{refs}
 \bibliographystyle{ieeetr} \markright{ }
 \end{document}
+

@@ -1,0 +1,97 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{url}
+\usepackage[small]{caption}
+\usepackage{subcaption}
+\DeclareGraphicsExtensions{.pdf,.eps,.svg,.pgm, .png}
+    % EXTREMELY COMMON LaTeX PACKAGES TO INCLUDE:
+%    \usepackage{amsmath,amsthm, amsfonts,amssymb} % For AMS Beautification
+    \usepackage{setspace} % For Single & Double Spacing Commands
+    \usepackage[linktocpage,bookmarksopen,bookmarksnumbered,% For PDF navigation
+		pdftitle={RP Hash Clustering},%   and URL hyperlinks
+		pdfauthor={Department of Electronic and Computing Systems},%
+		pdfsubject={NSF Proposal},%
+		pdfkeywords={UC}]{hyperref}
+
+\usepackage{caption3} % load caption package kernel first
+\DeclareCaptionOption{parskip}[]{} % disable "parskip" caption option
+%\usepackage[small]{caption}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{algorithm}
+\usepackage{algcompatible}
+%\usepackage{algorithm2e}
+%\usepackage{algorithmic}
+
+
+
+  \newtheorem{Theorem}{Theorem}[section]
+    \newtheorem{Proposition}[Theorem]{Proposition}
+    \newtheorem{Lemma}[Theorem]{Lemma}
+    \newtheorem{Corollary}[Theorem]{Corollary}
+
+        \newtheorem{Definition}[Theorem]{Definition}
+        \newtheorem{Example}[Theorem]{Example}
+        \newtheorem{Conjecture}[Theorem]{Conjecture}
+
+        \newtheorem{Remark}[Theorem]{Remark}
+    \newenvironment{Sketch}{\par\noindent{\sc Sketch of Proof}\quad}{\hfill\qed\par\smallskip}
+    \newenvironment{Proof}{\par\noindent{\sc Proof}\quad}{\hfill\qed\par\smallskip}
+    \newenvironment{ReuseTheorem}[2]{\par\vspace{12pt}\noindent{\bf #1~\ref{#2}$'$.}\it}{\par\vspace{12pt}}
+    \newenvironment{RestateTheorem}[2]{\par\vspace{12pt}\noindent{\bf #1~\ref{#2}.}\it}{\par\vspace{12pt}}
+
+\usepackage[section]{placeins}
+%opening
+\title{Summary: Random Projection Hashing for Scalable Big Data Clustering}
+\author{Lee Carraher}
+\begin{document}
+ Data clustering is
+ an inherent problem in data analysis. It is the principle work horse of many more targeted data analysis and retrieval methods,
+ has been studied extensively in computing and mathematics. As the ever changing computing landscape moves forward, multi-processor
+ and distributed computing is rapidly overtaking sequential computing prompting a fundamental restructuring in algorithmic design.
+ In this proposal we present a novel method for very large scale distributed approximate data clustering.
+ Random Projection Hash(\emph{RPHash}) was expressly created for minimizing parallel communication overhead while providing
+ algorithmic scalability. In the proposal we discuss the shortcomings of various other parallel methods. Though some 
+ have been converted to function efficiently on parallel and distributed systems, they often have potential issues 
+ in asymptotic scalability or limited application space.\\
+ 
+ The principle concept behind \emph{RPHash} clustering is the trade-off of individual core redundancy and approximation to
+ decouple the data processing streams over a many core distributed system. 
+ Stream synchronization is provided probabilistically by performing 
+ redundant multi-probe random projections into a mathematically generative object. The Leech Lattice object provides a
+ high dimensional space quantizer, with universally applicable region IDs. At the system level, \emph{RPHash}'s 
+ sequential bottleneck is no worse than the well know, highly scalable, parallel logarithmic reduction.\\
+ 
+ Our preliminary objective is to develop a sequential version of the proposed \emph{RPHash} algorithm. Though the 
+ sequential version will likely not exceed any current clustering algorithms in any way, it will be an important 
+ step in the development of the parallel RPHash algorithm. The sequential algorithm will provide initial validity 
+ to our claims through a reasonable comparison in regards to overall accuracy with other clustering methods. The 
+ sequential algorithm will also give insight into the differences introduced when RPHash is scaled and deployed 
+ on a parallel system.\\
+
+ The principle objective of proposal is to develop the parallel RPHash algorithm. This step will require us to explore
+ a variety of variants for different steps of the algorithm. In general, we will favor
+ empirical evidence to discover the set of variants that provide the best scalability. Though some theoretical work
+ will be provided, the wide application space of our algorithm favors such empirical methods.
+ Furthermore, we will deploy the system on
+ the Hadoop Map Reduce (\emph{MR}v2) core framework. The Hadoop framework will allow us to scale our algorithm using 
+ commercially available distributed computing resources. \\
+ 
+ The redundancy introduced in the multi-probe projection step will adversely effect the sequential asymptotic complexity 
+ of the algorithm, making it less efficient than most sequential clustering algorithms. For this reason, the focus of this
+ proposal will not be on theoretical sequential efficiency, or even the theoretical complexity of parallel variants of clustering
+ algorithms, rather it will be on real world empirical tests with both real
+ and synthetic data, on real distributed systems. The purpose of our emphasis on real world testing is to encompass all aspects of
+ distributed systems without requirements on exotic networking and shared memory architecture systems running under ideal conditions.
+ We will test \emph{RPHash} on both synthetic and real world data. The synthetic data will provide parameter sampling rates
+ well above those found in real world data, such as dimensionality and number for clusters. Furthermore, noise and density rates
+ can be controlled to better characterize the strengths and weaknesses of the algorithm.
+ 
+\end{document}

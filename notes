@@ -1,0 +1,3 @@
+another method for fast intersection of potentially intersecting cluster centers projected hash ids:
+ apply a much more restrictive random hash with universe (say k log k)
+using birthday-bound this universe should yield k unique ids, with the k(log k - 1) overlaps, as the probability of random intersection is ~O(klogk).
