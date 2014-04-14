@@ -1,0 +1,96 @@
+
+\documentclass[11pt]{article}
+
+\usepackage{fullpage,times}
+\setlength{\topmargin}{0.4in}
+\addtolength{\textheight}{1in}
+
+\thispagestyle{empty}
+\begin{document}
+
+\noindent
+\begin{center} {\bf Project Summary} \end{center}
+
+\medskip
+\noindent
+
+%% Each proposal must contain a summary of the proposed project not more than one page in
+%% length. The Project Summary consists of an overview, a statement on the intellectual
+%% merit of the proposed activity, and a statement on the broader impacts of the proposed
+%% activity.  
+
+%% The overview includes a description of the activity that would result if the proposal
+%% were funded and a statement of objectives and methods to be employed. The statement on
+%% intellectual merit should describe the potential of the proposed activity to advance
+%% knowledge. The statement on broader impacts should describe the potential of the
+%% proposed activity to benefit society and contribute to the achievement of specific,
+%% desired societal outcomes. 
+
+%% The Project Summary should be written in the third person, informative to other persons
+%% working in the same or related fields, and, insofar as possible, understandable to a
+%% scientifically or technically literate lay reader. It should not be an abstract of the
+%% proposal. 
+
+%% Proposals that do not contain the Project Summary, including an overview and separate
+%% statements on intellectual merit and broader impacts will not be accepted by FastLane
+%% or will be returned without review. 
+
+%% If the Project Summary contains special characters it may be uploaded as a
+%% Supplementary Document. Project Summaries submitted as a PDF must be formatted with
+%% separate headings for the overview, statement on the intellectual merit of the proposed
+%% activity, and statement on the broader impacts of the proposed activity. Failure to
+%% include these headings may result in the proposal being returned without review. 
+
+\subsection*{Overview}
+
+This proposal presents a distributed algorithm for secure clustering of high dimensional
+data.  The novel algorithm, called Random Projection Hash or \emph{RPHash}, utilizes
+aspects of locality sensitive hashing (LSH) and multi-probe random projection for
+computational scalability and linear achievable gains from parallel speed up.  The two
+step approach is data agnostic, minimizes communication overhead, and has a priori
+predictable computational time.  The system is deployable on commercially available cloud
+resources running the Hadoop (\emph{MR}v2) implementation of MapReduce.  The \emph{RPHash}
+solution will have a wide applicability to a variety of standard clustering applications
+while this project will focus on a subset of clustering problems in the biological data
+analysis space.  \emph{RPHash} also combats de-anonymization attacks inherently resulting
+from its algorithmic requirements thus addressing requirements involving the handling and
+privacy protection of health care data\cite{presidential} as well as the inherent privacy 
+concerns of using
+cloud based services.  Furthermore, \emph{RPHash} will allow researchers to scale their
+clustering problems without the need for specialized equipment or computing resources.
+The proposed cloud processing solution will allow researchers to arbitrarily scale their
+processing needs using virtually limitless commercial processing resources.
+
+\subsection*{Intellectual Merit}
+A principle driving force in computational progress results from material and architectural
+advances in microprocessor design. Many of these advances have been stagnated for linear processing 
+however due to thermal dissipation and energy requirements, resulting in a shift toward parallel multi-processing.
+Though much has been done to adapt current algorithms for this parallel processing landscape, many
+solutions tend to be a' posteriori methods favoring empirical speedup over long term scalability. In this
+proposal, we develop a method for an algorithm central to data analysis, designed expressly for 
+parallel multi-processing systems. In addition, our algorithm addresses often overlooked communication
+bottlenecks in parallel design, through use of side channel synchronization based on mathematically 
+generative groups and probabilistic approximation. A favorable side effect of the probabilistic
+approximation results in a possible solution to de-anonymization attacks\cite{deanon1}\cite{deanon2} on user data.
+
+
+\subsection*{Broader Impacts}
+
+Clustering has long been the standard method used for the analysis of labeled and
+unlabeled data.  Clusterings' effects intrinsically identify the latent models underlying
+the distributions of objects
+in a dataset, often unattainable through standard statistical methods.  Single pass, data
+intensive statistical methods are often the primary workhorses for parallel database
+processing of business logic and other domains, while clustering is often overlooked due
+to scalability ocncerns and confusion caused by the wide variety of available distributed
+algorithms \cite{clusters}.  A multitude of surveys \cite{clusters} have been made available
+comparing different aspects of clustering algorithms, such as accuracy, complexity and
+application domain.  Fields in health and biology are benefited by data clustering
+scalability.  Such fields as Micro Array clustering, Protein-Protein interaction
+clustering, medical resource decision making, medical image processing, and clustering of
+epidemiological events all serve to benefit from larger dataset sizes. Furthermore, the proposed
+method provides data anonymization through destructive manipulation of the data preventing
+de-anonymization attacks beyond standard best practices database security methods.
+
+\end{document}
+ 
